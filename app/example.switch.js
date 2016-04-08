@@ -1,0 +1,59 @@
+System.register(['angular2/core', './foundation/switch.component', 'angular2/common', './data/data.service'], function(exports_1, context_1) {
+    "use strict";
+    var __moduleName = context_1 && context_1.id;
+    var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+        var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+        if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+        else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+        return c > 3 && r && Object.defineProperty(target, key, r), r;
+    };
+    var __metadata = (this && this.__metadata) || function (k, v) {
+        if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+    };
+    var core_1, switch_component_1, common_1, data_service_1;
+    var ExampleSwitch;
+    return {
+        setters:[
+            function (core_1_1) {
+                core_1 = core_1_1;
+            },
+            function (switch_component_1_1) {
+                switch_component_1 = switch_component_1_1;
+            },
+            function (common_1_1) {
+                common_1 = common_1_1;
+            },
+            function (data_service_1_1) {
+                data_service_1 = data_service_1_1;
+            }],
+        execute: function() {
+            ExampleSwitch = (function () {
+                function ExampleSwitch(_dataService) {
+                    this._dataService = _dataService;
+                }
+                ExampleSwitch.prototype.ngOnInit = function () {
+                    this.getQuestions();
+                };
+                ExampleSwitch.prototype.getQuestions = function () {
+                    var _this = this;
+                    this._dataService.getQuestions()
+                        .then(function (questions) {
+                        _this.questions = questions;
+                    });
+                };
+                ExampleSwitch = __decorate([
+                    core_1.Component({
+                        selector: 'foundation-switches',
+                        directives: [switch_component_1.CheckSwitchComponent, switch_component_1.RadioSwitchComponent, common_1.NgSwitch, common_1.NgSwitchWhen],
+                        providers: [data_service_1.DataService],
+                        template: "\n        <div class=\"row\">\n            <div class=\"small-12columns\">\n                <h4>Switch</h4>\n            </div>\n        </div>\n        <div class=\"row\">\n            <div class=\"small-6 columns\">\n                <h4 class=\"subheader\">Check Switches</h4>\n                <check-switch switch-id=\"switch1a\" title=\"Switch Me\" value=\"check1a\" active></check-switch>\n                <check-switch switch-id=\"switch1b\" title=\"Switch Me\" value=\"check1b\" size=\"tiny\"></check-switch>\n                <check-switch switch-id=\"switch1c\" title=\"Switch Me\" value=\"check1c\" size=\"small\"></check-switch>\n                <check-switch switch-id=\"switch1d\" title=\"Switch Me\" value=\"check1d\" size=\"large\"></check-switch>\n            </div>\n            <div class=\"small-6 columns\">\n                <h4 class=\"subheader\">Check Switches - Inner Labels</h4>\n                <check-switch switch-id=\"switch2a\" value=\"check2a\" active-text=\"Yes\" inactive-text=\"No\"></check-switch>\n                <check-switch switch-id=\"switch2b\" value=\"check2b\" active-text=\"Yes\" inactive-text=\"No\" size=\"tiny\"></check-switch>\n                <check-switch switch-id=\"switch2c\" value=\"check2c\" active-text=\"Yes\" inactive-text=\"No\" size=\"small\"></check-switch>\n                <check-switch switch-id=\"switch2d\" value=\"check2d\" active-text=\"Yes\" inactive-text=\"No\" size=\"large\"></check-switch>\n            </div>\n        </div>\n\n        <div class=\"row\">\n            <div class=\"small-12 columns\">\n                <h4 class=\"subheader\">Radio Switches</h4>\n            </div>\n        </div>\n\n        <div class=\"row\">\n            <div class=\"small-3 columns\">\n                <h4 class=\"subheader\">Normal</h4>\n                <radio-switch switch-id=\"switch3a\" group=\"group1\" value=\"A\" title=\"Radio switch A\" active></radio-switch>\n                <radio-switch switch-id=\"switch3b\" group=\"group1\" value=\"B\" title=\"Radio switch B\"></radio-switch>\n                <radio-switch switch-id=\"switch3c\" group=\"group1\" value=\"C\" title=\"Radio switch C\"></radio-switch>\n            </div>\n            <div class=\"small-3 columns\">\n                <h4 class=\"subheader\">Tiny</h4>\n                <radio-switch switch-id=\"switch4a\" group=\"group2\" value=\"A\" title=\"Radio switch A\" size=\"tiny\" active></radio-switch>\n                <radio-switch switch-id=\"switch4b\" group=\"group2\" value=\"B\" title=\"Radio switch B\" size=\"tiny\"></radio-switch>\n                <radio-switch switch-id=\"switch4c\" group=\"group2\" value=\"C\" title=\"Radio switch C\" size=\"tiny\"></radio-switch>\n            </div>\n            <div class=\"small-3 columns\">\n                <h4 class=\"subheader\">Small</h4>\n                <radio-switch switch-id=\"switch5a\" group=\"group3\" value=\"A\" title=\"Radio switch A\" size=\"small\" active></radio-switch>\n                <radio-switch switch-id=\"switch5b\" group=\"group3\" value=\"B\" title=\"Radio switch B\" size=\"small\"></radio-switch>\n                <radio-switch switch-id=\"switch5c\" group=\"group3\" value=\"C\" title=\"Radio switch C\" size=\"small\"></radio-switch>\n            </div>\n            <div class=\"small-3 columns\">\n                <h4 class=\"subheader\">Large</h4>\n                <radio-switch switch-id=\"switch6a\" group=\"group4\" value=\"A\" title=\"Radio switch A\" size=\"large\" active></radio-switch>\n                <radio-switch switch-id=\"switch6b\" group=\"group4\" value=\"B\" title=\"Radio switch B\" size=\"large\"></radio-switch>\n                <radio-switch switch-id=\"switch6c\" group=\"group4\" value=\"C\" title=\"Radio switch C\" size=\"large\"></radio-switch>\n            </div>\n        </div>\n\n        <div class=\"row\">\n            <div class=\"small-12 columns\">\n                <h4 class=\"subheader\">Radio Switches - Inner Label</h4>\n            </div>\n        </div>\n\n        <div class=\"row\">\n            <div class=\"small-3 columns\">\n                <h4 class=\"subheader\">Normal</h4>\n                <radio-switch switch-id=\"switch7a\" group=\"group5\" value=\"A\" title=\"Radio switch A\" active-text=\"A\" inactive-text=\"<span style='text-decoration: line-through;'>A</span>\" active></radio-switch>\n                <radio-switch switch-id=\"switch7b\" group=\"group5\" value=\"B\" title=\"Radio switch B\" active-text=\"B\" inactive-text=\"<span style='text-decoration: line-through;'>B</span>\"></radio-switch>\n                <radio-switch switch-id=\"switch7c\" group=\"group5\" value=\"C\" title=\"Radio switch C\" active-text=\"C\" inactive-text=\"<span style='text-decoration: line-through;'>C</span>\"></radio-switch>\n            </div>\n            <div class=\"small-3 columns\">\n                <h4 class=\"subheader\">Tiny</h4>\n                <radio-switch switch-id=\"switch8a\" group=\"group6\" value=\"A\" title=\"Radio switch A\" size=\"tiny\" active-text=\"A\" inactive-text=\"<span style='text-decoration: line-through;'>A</span>\" active></radio-switch>\n                <radio-switch switch-id=\"switch8b\" group=\"group6\" value=\"B\" title=\"Radio switch B\" size=\"tiny\" active-text=\"B\" inactive-text=\"<span style='text-decoration: line-through;'>B</span>\"></radio-switch>\n                <radio-switch switch-id=\"switch8c\" group=\"group6\" value=\"C\" title=\"Radio switch C\" size=\"tiny\" active-text=\"C\" inactive-text=\"<span style='text-decoration: line-through;'>C</span>\"></radio-switch>\n            </div>\n            <div class=\"small-3 columns\">\n                <h4 class=\"subheader\">Small</h4>\n                <radio-switch switch-id=\"switch9a\" group=\"group7\" value=\"A\" title=\"Radio switch A\" size=\"small\" active-text=\"A\" inactive-text=\"<span style='text-decoration: line-through;'>A</span>\" active></radio-switch>\n                <radio-switch switch-id=\"switch9b\" group=\"group7\" value=\"B\" title=\"Radio switch B\" size=\"small\" active-text=\"B\" inactive-text=\"<span style='text-decoration: line-through;'>B</span>\"></radio-switch>\n                <radio-switch switch-id=\"switch9c\" group=\"group7\" value=\"C\" title=\"Radio switch C\" size=\"small\" active-text=\"C\" inactive-text=\"<span style='text-decoration: line-through;'>C</span>\"></radio-switch>\n            </div>\n            <div class=\"small-3 columns\">\n                <h4 class=\"subheader\">Large</h4>\n                <radio-switch switch-id=\"switch10a\" group=\"group8\" value=\"A\" title=\"Radio switch A\" active-text=\"A\" inactive-text=\"<span style='text-decoration: line-through;'>A</span>\" size=\"large\"  active></radio-switch>\n                <radio-switch switch-id=\"switch10b\" group=\"group8\" value=\"B\" title=\"Radio switch B\" active-text=\"B\" inactive-text=\"<span style='text-decoration: line-through;'>B</span>\" size=\"large\" ></radio-switch>\n                <radio-switch switch-id=\"switch10c\" group=\"group8\" value=\"C\" title=\"Radio switch C\" active-text=\"C\" inactive-text=\"<span style='text-decoration: line-through;'>C</span>\" size=\"large\" ></radio-switch>\n            </div>\n        </div>\n\n        <div class=\"row\">\n            <div class=\"small-12 columns\">\n\n                <h4 class=\"subheader\">Dynamic Data</h4>\n\n                <div class=\"row\">                    \n\n                    <div *ngFor=\"#question of questions; #i = index\" class=\"small-6 columns\">\n\n                        <div [ngSwitch]=\"question.qtype\">\n                            <h4>{{question.title}}</h4>\n                            <h5 class=\"subheader\">[Question Type: {{question.qtype}}]</h5>\n                            <div *ngSwitchWhen=\"'check'\">\n                                <div *ngFor=\"#response of question.responses; #j = index\">\n                                    <span>{{response.title}}</span><check-switch switch-id=\"switch{{i}}_{{j}}\" title=\"{{response.title}}\" value=\"{{response.value}}\"></check-switch>\n                                </div>                        \n                            </div>\n                            <div *ngSwitchWhen=\"'radio'\">\n                                <div *ngFor=\"#response of question.responses; #j = index\">\n                                    <span>{{response.title}}</span><radio-switch switch-id=\"switch{{i}}_{{j}}\" group=\"group{{i}}\" title=\"{{response.title}}\" value=\"{{response.value}}\"></radio-switch>\n                                </div>                            \n                            </div>\n                        </div>\n\n                    </div>\n                </div>\n            </div>\n        </div>\n    "
+                    }), 
+                    __metadata('design:paramtypes', [data_service_1.DataService])
+                ], ExampleSwitch);
+                return ExampleSwitch;
+            }());
+            exports_1("ExampleSwitch", ExampleSwitch);
+        }
+    }
+});
+//# sourceMappingURL=example.switch.js.map

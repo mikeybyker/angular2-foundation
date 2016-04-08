@@ -1,0 +1,17 @@
+.top-bar
+{
+    margin-bottom: 1.5rem;
+}
+.top-bar,
+.top-bar ul
+{
+    background: #121212;
+}
+.top-bar a
+{
+    color: #fff;
+}
+.menu-text
+{
+    color: #fff;
+}
