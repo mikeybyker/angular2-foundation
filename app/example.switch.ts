@@ -1,6 +1,6 @@
-import {Component, OnInit}                           from 'angular2/core';
+import {Component, OnInit}                           from '@angular/core';
 import {CheckSwitchComponent, RadioSwitchComponent}  from './foundation/switch.component';
-import {NgSwitch, NgSwitchWhen}                      from 'angular2/common';
+import {NgSwitch, NgSwitchWhen}                      from '@angular/common';
 import {DataService}                                 from './data/data.service';
 import {Question}                                    from './data/question';
 
@@ -102,22 +102,22 @@ import {Question}                                    from './data/question';
 
                 <h4 class="subheader">Dynamic Data</h4>
 
-                <div class="row">                    
+                <div class="row">
 
-                    <div *ngFor="#question of questions; #i = index" class="small-6 columns">
+                    <div *ngFor="let question of questions; let i = index" class="small-6 columns">
 
                         <div [ngSwitch]="question.qtype">
                             <h4>{{question.title}}</h4>
                             <h5 class="subheader">[Question Type: {{question.qtype}}]</h5>
                             <div *ngSwitchWhen="'check'">
-                                <div *ngFor="#response of question.responses; #j = index">
+                                <div *ngFor="let response of question.responses; let j = index">
                                     <span>{{response.title}}</span><check-switch switch-id="switch{{i}}_{{j}}" title="{{response.title}}" value="{{response.value}}"></check-switch>
-                                </div>                        
+                                </div>
                             </div>
                             <div *ngSwitchWhen="'radio'">
-                                <div *ngFor="#response of question.responses; #j = index">
+                                <div *ngFor="let response of question.responses; let j = index">
                                     <span>{{response.title}}</span><radio-switch switch-id="switch{{i}}_{{j}}" group="group{{i}}" title="{{response.title}}" value="{{response.value}}"></radio-switch>
-                                </div>                            
+                                </div>
                             </div>
                         </div>
 

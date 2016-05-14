@@ -1,5 +1,5 @@
-import {Component} from 'angular2/core';
-import {NgIf}      from 'angular2/common';
+import {Component} from '@angular/core';
+import {NgIf}      from '@angular/common';
 
 @Component({
     selector: 'breadcrumbs',
@@ -8,7 +8,7 @@ import {NgIf}      from 'angular2/common';
     template: `
         <nav aria-label="You are here:" role="navigation">
             <ul class="breadcrumbs">
-                <li *ngFor="#page of pages; #last = last; #i = index;" [class.disabled]="page.disabled">
+                <li *ngFor="let page of pages; let last = last; let i = index;" [class.disabled]="page.disabled">
                     <span *ngIf="!page.disabled && last">
                         <span class="show-for-sr">Current: </span> {{page.title}}
                     </span>
@@ -28,7 +28,7 @@ export class BreadcrumbsComponent {
     pages: Array<any>;
 
     ngOnInit(): void {
-        
+
     }
 }
 

@@ -1,13 +1,13 @@
-import { Component }             from 'angular2/core';
-import { HomeComponent }         from './home.component'; 
-import { ExampleBreadcrumbs }    from './example.breadcrumbs'; 
-import { ExampleCallout }        from './example.callout'; 
-import { ExampleTabs }           from './example.tabs'; 
-import { ExampleSwitch }         from './example.switch'; 
-import { ExampleAccordion }      from './example.accordion'; 
+import { Component }             from '@angular/core';
+import { HomeComponent }         from './home.component';
+import { ExampleBreadcrumbs }    from './example.breadcrumbs';
+import { ExampleCallout }        from './example.callout';
+import { ExampleTabs }           from './example.tabs';
+import { ExampleSwitch }         from './example.switch';
+import { ExampleAccordion }      from './example.accordion';
 import { RouteConfig,
          ROUTER_DIRECTIVES,
-         ROUTER_PROVIDERS }      from 'angular2/router';
+         ROUTER_PROVIDERS }      from '@angular/router-deprecated';
 
 @Component({
     selector: 'my-app',

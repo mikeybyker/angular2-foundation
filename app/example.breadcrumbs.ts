@@ -1,4 +1,4 @@
-import {Component}               from 'angular2/core';
+import {Component}               from '@angular/core';
 import {BreadcrumbsComponent}    from './foundation/breadcrumbs.component';
 
 @Component({
@@ -14,7 +14,7 @@ import {BreadcrumbsComponent}    from './foundation/breadcrumbs.component';
             <div class="small-12 columns">
                 <breadcrumbs [pages]="pages"></breadcrumbs>
             </div>
-        </div> 
+        </div>
         <div class="row">
             <div class="medium-12 large-4 columns">
                 Pass an object containing the breadcrumb pages to the component, with the following properties:
@@ -44,7 +44,7 @@ pages: Array&lt;any&gt; = [
                     </pre>
                 </div>
             </div>
-        </div>       
+        </div>
     `
 })
 
@@ -54,7 +54,7 @@ export class ExampleBreadcrumbs {
         { title: 'The Cure', url: '/a' },
         { title: 'Albums', url: '/b' },
         { title: 'The Head On The Door', url: '/c', disabled: true },
-        { title: 'Tracks', url: '/d' }
+        { title: 'Tracks', url: '/d' },
         { title: 'Sinking', url: '/e' }
     ];
 }

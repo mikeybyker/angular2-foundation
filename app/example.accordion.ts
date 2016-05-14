@@ -1,4 +1,4 @@
-import {Component, OnInit}                   from 'angular2/core';
+import {Component, OnInit}                   from '@angular/core';
 import {AccordionComponent, PanelComponent}  from './foundation/accordion.component';
 import {DataService}                         from './data/data.service';
 import {Artist}                              from './data/artist';
@@ -17,7 +17,7 @@ import {Artist}                              from './data/artist';
             <div class="small-12 columns">
 
                 <h4 class="subheader">Static Data</h4>
-                
+
                 <accordion [multiExpand]="false" [allClosed]="false">
                     <panel title="The Cure" [initial]="true">
                         <div class="my-component-content">The Cure are a rock band which formed in 1976 in Crawley, England, United Kingdom. The band originally consisted of Robert Smith (vocals, guitar), Porl Thompson (guitar), Michael Dempsey (bass) and Lol Tolhurst (drums), with the band's lineup overgoing several changes throughout the years and Smith remaining as the only constant member throughout the band's history. The band currently consists of Smith (vocals, guitar), Simon Gallup (bass), Roger O'Donnell (keyboards), Jason Cooper (drums) and Reeves Gabrels (guitar)</div>
@@ -33,14 +33,14 @@ import {Artist}                              from './data/artist';
             <div class="small-12 columns">
 
                 <h4 class="subheader">Dynamic Data - Allow Multi Expand</h4>
-                
+
                 <accordion [multiExpand]="true" [allClosed]="false">
-                    <panel *ngFor="#artist of artists" [title]="artist.name" [initial]="artist.active">
+                    <panel *ngFor="let artist of artists" [title]="artist.name" [initial]="artist.active">
                         {{ artist.bio }}
                     </panel>
                 </accordion>
             </div>
-        </div>  
+        </div>
     `
 })
 

@@ -1,4 +1,4 @@
-import {Component, HostBinding, Input, AfterContentInit, Query, QueryList} from 'angular2/core';
+import {Component, HostBinding, Input, AfterContentInit, Query, QueryList} from '@angular/core';
 
 @Component({
     selector: 'tab',
@@ -22,8 +22,8 @@ export class TabComponent
     selector: 'tabset',
     template: `
         <ul class="tabs" [class.vertical]="vertical">
-            <li *ngFor="#tab of tabs" class="tabs-title" [class.is-active]="tab.active" (click)="setActive(tab)">
-                <a ng-href [class.is-active]="tab.active" [attr.aria-selected]="tab.active">{{tab.title}}</a>                
+            <li *ngFor="let tab of tabs" class="tabs-title" [class.is-active]="tab.active" (click)="setActive(tab)">
+                <a ng-href [class.is-active]="tab.active" [attr.aria-selected]="tab.active">{{tab.title}}</a>
             </li>
         </ul>
         <div class="tabs-content" [class.vertical]="vertical">

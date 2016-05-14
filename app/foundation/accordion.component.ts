@@ -5,7 +5,7 @@ import { Component,
          QueryList,
          Host,
          ContentChildren,
-         forwardRef}         from 'angular2/core';
+         forwardRef}         from '@angular/core';
 
 @Component({
     selector: 'accordion',
@@ -32,7 +32,7 @@ export class AccordionComponent {
 
     activate(panel: PanelComponent) {
         if (!panel){
-            this.closeAll(); 
+            this.closeAll();
             return;
         }
         if (this.multiExpand) {
@@ -42,7 +42,7 @@ export class AccordionComponent {
             // Single open version: does not toggle, always click === open
             this.closeAll();
             panel.active = true;
-        }        
+        }
     }
 
 }
@@ -63,7 +63,7 @@ export class PanelComponent implements AfterContentInit {
     @Input('title') title: string;
     @Input('initial') active: boolean = false;
 
-    constructor( @Host() @Inject(forwardRef(() => AccordionComponent)) private accordion: AccordionComponent) {       
+    constructor( @Host() @Inject(forwardRef(() => AccordionComponent)) private accordion: AccordionComponent) {
     }
     ngAfterContentInit() {
         // Depends which you want to take precedence - allClosed on the accordion, or initial on the panel...

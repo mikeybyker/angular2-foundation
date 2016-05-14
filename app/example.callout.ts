@@ -1,4 +1,4 @@
-import {Component, OnInit}   from 'angular2/core';
+import {Component, OnInit}   from '@angular/core';
 import {CalloutComponent}    from './foundation/callout.component';
 import {DataService}         from './data/data.service';
 import {Artist}              from './data/artist';
@@ -62,11 +62,11 @@ import {Artist}              from './data/artist';
         <div class="row">
             <div class="small-12 columns">
                 <h4 class="subheader">Dynamic <small>[Random attributes]</small></h4>
-                <callout *ngFor="#artist of artists" header="{{artist.name}}" modifierClass="{{artist.modifierClass}}" [closable]="artist.closable">
+                <callout *ngFor="let artist of artists" header="{{artist.name}}" modifierClass="{{artist.modifierClass}}" [closable]="artist.closable">
                         {{ artist.bio }}
                 </callout>
             </div>
-        </div>       
+        </div>
     `
 })
 
@@ -103,7 +103,7 @@ export class ExampleCallout implements OnInit {
         return {
             modifierClass: c + ' ' + s,
             closable: closable
-        };             
+        };
     }
 
     getArtists() {
@@ -113,7 +113,7 @@ export class ExampleCallout implements OnInit {
                 // Danger! Using Object.assign >> May blow stuff up!
                 artists.forEach((artist, index, arr) =>{
                     o = Object.assign({}, artist, this.getModifier())
-                    this.artists[index] = o;                    
+                    this.artists[index] = o;
                 });
             });
     }

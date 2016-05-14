@@ -1,4 +1,4 @@
-import {Component, OnInit}               from 'angular2/core';
+import {Component, OnInit}               from '@angular/core';
 import {TabsetComponent, TabComponent}   from './foundation/tabs.component';
 import {DataService}                     from './data/data.service';
 import {Artist}                          from './data/artist';
@@ -13,7 +13,7 @@ import {Artist}                          from './data/artist';
                 <h4>Tabs</h4>
             </div>
         </div>
-        
+
         <div class="row">
             <div class="small-12 columns">
                 <h4 class="subheader">Horizontal Tabs <small>[First 2 static data, the rest dynamic]</small></h4>
@@ -25,7 +25,7 @@ import {Artist}                          from './data/artist';
                         Neutral Milk Hotel is an American indie rock band formed by singer, guitarist, and songwriter Jeff Mangum in the early 1990s. On the band's two full-length albums, Mangum played with a number of other musicians, notably Jeremy Barnes (drums), Scott Spillane (horns), Julian Koster (musical saw/banjo/accordion/bass guitar) and producer-instrumentalist Robert Schneider
                     </tab>
                     <!-- dynamic tabs -->
-                    <tab *ngFor="#artist of artists" [title]="artist.name">
+                    <tab *ngFor="let artist of artists" [title]="artist.name">
                         {{ artist.bio }}
                     </tab>
                 </tabset>
@@ -45,7 +45,7 @@ import {Artist}                          from './data/artist';
                 </tabset>
 
             </div>
-        </div>    
+        </div>
     `
 })
 
