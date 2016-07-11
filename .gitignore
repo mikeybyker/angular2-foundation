@@ -3,4 +3,7 @@
 
 node_modules/
 removed/
+typings/
 cleaner.bat
+components.sublime-project
+components.sublime-workspace

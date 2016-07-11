@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
             <div class="small-12 columns">
                 <h3>Foundation 5 Components in Angular 2</h3>
                 <p>
-                    A Selection of <a href="http://foundation.zurb.com/">Foundation</a> components made with <a href="https://angular.io">Angular 2</a> (rc-1). The components can be found in the app/foundation folder.
+                    A Selection of <a href="http://foundation.zurb.com/">Foundation</a> components made with <a href="https://angular.io">Angular 2</a> (rc-4). The components can be found in the app/foundation folder.
                 <p>
                 <p>
                     Just playing around with Angular 2 - I only needed the Tabs and Accordion, and just threw a few others in...the most simple ones :-) There will be different (better) ways to go about building these components, and certainly a more consistent approach. Things can/will break with subsequent releases.
