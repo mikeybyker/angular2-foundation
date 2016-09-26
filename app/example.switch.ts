@@ -1,13 +1,9 @@
-import {Component, OnInit}                           from '@angular/core';
-import {CheckSwitchComponent, RadioSwitchComponent}  from './foundation/switch.component';
-import {NgSwitch, NgSwitchCase}                      from '@angular/common';
-import {DataService}                                 from './data/data.service';
-import {Question}                                    from './data/question';
+import { Component, OnInit }  from '@angular/core';
+import { DataService }        from './data/data.service';
+import { Question }           from './data/question';
 
 @Component({
     selector: 'foundation-switches',
-    directives: [CheckSwitchComponent, RadioSwitchComponent, NgSwitch, NgSwitchCase],
-    providers: [DataService],
     template: `
         <div class="row">
             <div class="small-12columns">
@@ -109,12 +105,12 @@ import {Question}                                    from './data/question';
                         <div [ngSwitch]="question.qtype">
                             <h4>{{question.title}}</h4>
                             <h5 class="subheader">[Question Type: {{question.qtype}}]</h5>
-                            <div [ngSwitchCase]="'check'">
+                            <div *ngSwitchCase="'check'">
                                 <div *ngFor="let response of question.responses; let j = index">
                                     <span>{{response.title}}</span><check-switch switch-id="switch{{i}}_{{j}}" title="{{response.title}}" value="{{response.value}}"></check-switch>
                                 </div>
                             </div>
-                            <div [ngSwitchCase]="'radio'">
+                            <div *ngSwitchCase="'radio'">
                                 <div *ngFor="let response of question.responses; let j = index">
                                     <span>{{response.title}}</span><radio-switch switch-id="switch{{i}}_{{j}}" group="group{{i}}" title="{{response.title}}" value="{{response.value}}"></radio-switch>
                                 </div>

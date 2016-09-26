@@ -48,7 +48,7 @@ var AccordionComponent = (function () {
     AccordionComponent = __decorate([
         core_1.Component({
             selector: 'accordion',
-            template: "\n        <ul class=\"accordion\">\n            <ng-content></ng-content>\n        </ul>\n    "
+            template: "\n    <ul class=\"accordion\">\n        <ng-content></ng-content>\n    </ul>\n  "
         }), 
         __metadata('design:paramtypes', [])
     ], AccordionComponent);
@@ -80,7 +80,7 @@ var PanelComponent = (function () {
     PanelComponent = __decorate([
         core_1.Component({
             selector: 'panel',
-            template: "\n        <li class=\"accordion-item\" [class.is-active]=\"active\" (click)=\"clicked($event)\">\n            <a href=\"#\" class=\"accordion-title\" [attr.aria-selected]=\"active\" >{{title}}</a>\n            <div class=\"accordion-content\" [attr.aria-hidden]=\"!active\" [style.display]=\"active ? 'block' : 'none'\">\n                <ng-content></ng-content>\n            </div>\n        </li>\n    "
+            template: "\n    <li class=\"accordion-item\" [class.is-active]=\"active\" (click)=\"clicked($event)\">\n        <a href=\"#\" class=\"accordion-title\" [attr.aria-selected]=\"active\" >{{title}}</a>\n        <div class=\"accordion-content\" [attr.aria-hidden]=\"!active\" [style.display]=\"active ? 'block' : 'none'\">\n            <ng-content></ng-content>\n        </div>\n    </li>\n  "
         }),
         __param(0, core_1.Host()),
         __param(0, core_1.Inject(core_1.forwardRef(function () { return AccordionComponent; }))), 

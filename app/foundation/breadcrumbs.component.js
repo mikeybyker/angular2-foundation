@@ -9,7 +9,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var common_1 = require('@angular/common');
 var BreadcrumbsComponent = (function () {
     function BreadcrumbsComponent() {
     }
@@ -19,8 +18,7 @@ var BreadcrumbsComponent = (function () {
         core_1.Component({
             selector: 'breadcrumbs',
             inputs: ['pages'],
-            directives: [common_1.NgIf],
-            template: "\n        <nav aria-label=\"You are here:\" role=\"navigation\">\n            <ul class=\"breadcrumbs\">\n                <li *ngFor=\"let page of pages; let last = last; let i = index;\" [class.disabled]=\"page.disabled\">\n                    <span *ngIf=\"!page.disabled && last\">\n                        <span class=\"show-for-sr\">Current: </span> {{page.title}}\n                    </span>\n                    <span *ngIf=\"!page.disabled && !last\">\n                        <a [href]=\"page.url\">{{page.title}}</a>\n                    </span>\n                    <span *ngIf=\"page.disabled\">\n                        {{page.title}}\n                    </span>\n                </li>\n            </ul>\n        </nav>\n    "
+            template: "\n    <nav aria-label=\"You are here:\" role=\"navigation\">\n      <ul class=\"breadcrumbs\">\n        <li *ngFor=\"let page of pages; let last = last; let i = index;\" [class.disabled]=\"page.disabled\">\n          <span *ngIf=\"!page.disabled && last\">\n            <span class=\"show-for-sr\">Current: </span> {{page.title}}\n          </span>\n          <span *ngIf=\"!page.disabled && !last\">\n            <a [href]=\"page.url\">{{page.title}}</a>\n          </span>\n          <span *ngIf=\"page.disabled\">\n            {{page.title}}\n          </span>\n        </li>\n      </ul>\n    </nav>\n  "
         }), 
         __metadata('design:paramtypes', [])
     ], BreadcrumbsComponent);

@@ -9,7 +9,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var common_1 = require('@angular/common');
 var CalloutComponent = (function () {
     function CalloutComponent() {
         this.visible = true;
@@ -25,8 +24,7 @@ var CalloutComponent = (function () {
         core_1.Component({
             selector: 'callout',
             inputs: ['header', 'modifierClass'],
-            directives: [common_1.NgIf],
-            template: "\n        <div class=\"callout {{modifierClass}}\" *ngIf=\"visible\">\n            <h5>\n                {{header}}\n            </h5>\n            <p>\n                <ng-content></ng-content>\n            </p>\n            <button *ngIf=\"closable\" class=\"close-button\" aria-label=\"Dismiss alert\" type=\"button\" (click)=\"dismiss()\">\n                <span aria-hidden=\"true\">\u00D7</span>\n            </button>\n        </div>\n    "
+            template: "\n    <div class=\"callout {{modifierClass}}\" *ngIf=\"visible\">\n      <h5>\n        {{header}}\n      </h5>\n      <p>\n        <ng-content></ng-content>\n      </p>\n      <button *ngIf=\"closable\"\n        class=\"close-button\"\n        aria-label=\"Dismiss alert\"\n        type=\"button\"\n        (click)=\"dismiss()\">\n          <span aria-hidden=\"true\">\u00D7</span>\n      </button>\n    </div>\n  "
         }), 
         __metadata('design:paramtypes', [])
     ], CalloutComponent);

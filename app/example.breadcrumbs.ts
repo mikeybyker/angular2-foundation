@@ -1,9 +1,7 @@
 import {Component}               from '@angular/core';
-import {BreadcrumbsComponent}    from './foundation/breadcrumbs.component';
 
 @Component({
     selector: 'foundation-breadcrumbs',
-    directives: [BreadcrumbsComponent],
     template: `
         <div class="row">
             <div class="small-12columns">
@@ -35,12 +33,12 @@ import {BreadcrumbsComponent}    from './foundation/breadcrumbs.component';
                 <div class="callout">
                     <pre>
 pages: Array&lt;any&gt; = [
-                    { title: &#039;The Cure&#039;, url: &#039;/a&#039; },
-                    { title: &#039;Albums&#039;, url: &#039;/b&#039; },
-                    { title: &#039;The Head On The Door&#039;, url: &#039;/c&#039;, disabled: true },
-                    { title: &#039;Tracks&#039;, url: &#039;/d&#039; }
-                    { title: &#039;Sinking&#039;, url: &#039;/e&#039; }
-                ];
+  &#123; title: &#039;The Cure&#039;, url: &#039;/a&#039; &#125;,
+  &#123; title: &#039;Albums&#039;, url: &#039;/b&#039; &#125;,
+  &#123; title: &#039;The Head On The Door&#039;, url: &#039;/c&#039;, disabled: true &#125;,
+  &#123; title: &#039;Tracks&#039;, url: &#039;/d&#039; &#125;
+  &#123; title: &#039;Sinking&#039;, url: &#039;/e&#039; &#125;
+];
                     </pre>
                 </div>
             </div>

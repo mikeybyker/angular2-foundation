@@ -1,27 +1,25 @@
-import {Component} from '@angular/core';
-import {NgIf}      from '@angular/common';
+import { Component }  from '@angular/core';
 
 @Component({
-    selector: 'breadcrumbs',
-    inputs: ['pages'],
-    directives: [NgIf],
-    template: `
-        <nav aria-label="You are here:" role="navigation">
-            <ul class="breadcrumbs">
-                <li *ngFor="let page of pages; let last = last; let i = index;" [class.disabled]="page.disabled">
-                    <span *ngIf="!page.disabled && last">
-                        <span class="show-for-sr">Current: </span> {{page.title}}
-                    </span>
-                    <span *ngIf="!page.disabled && !last">
-                        <a [href]="page.url">{{page.title}}</a>
-                    </span>
-                    <span *ngIf="page.disabled">
-                        {{page.title}}
-                    </span>
-                </li>
-            </ul>
-        </nav>
-    `
+  selector: 'breadcrumbs',
+  inputs: ['pages'],
+  template: `
+    <nav aria-label="You are here:" role="navigation">
+      <ul class="breadcrumbs">
+        <li *ngFor="let page of pages; let last = last; let i = index;" [class.disabled]="page.disabled">
+          <span *ngIf="!page.disabled && last">
+            <span class="show-for-sr">Current: </span> {{page.title}}
+          </span>
+          <span *ngIf="!page.disabled && !last">
+            <a [href]="page.url">{{page.title}}</a>
+          </span>
+          <span *ngIf="page.disabled">
+            {{page.title}}
+          </span>
+        </li>
+      </ul>
+    </nav>
+  `
 })
 
 export class BreadcrumbsComponent {

@@ -8,9 +8,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var __param = (this && this.__param) || function (paramIndex, decorator) {
-    return function (target, key) { decorator(target, key, paramIndex); }
-};
 var core_1 = require('@angular/core');
 var TabComponent = (function () {
     function TabComponent() {
@@ -23,7 +20,6 @@ var TabComponent = (function () {
     TabComponent = __decorate([
         core_1.Component({
             selector: 'tab',
-            inputs: ['title'],
             template: "\n        <div class=\"tabs-panel\" [class.is-active]=\"active\">\n            <ng-content></ng-content>\n        </div>\n    "
         }), 
         __metadata('design:paramtypes', [])
@@ -46,12 +42,16 @@ var TabsetComponent = (function () {
         core_1.Input(), 
         __metadata('design:type', Boolean)
     ], TabsetComponent.prototype, "vertical", void 0);
+    __decorate([
+        core_1.ContentChildren(core_1.forwardRef(function () { return TabComponent; })), 
+        __metadata('design:type', core_1.QueryList)
+    ], TabsetComponent.prototype, "tabs", void 0);
     TabsetComponent = __decorate([
         core_1.Component({
             selector: 'tabset',
-            template: "\n        <ul class=\"tabs\" [class.vertical]=\"vertical\">\n            <li *ngFor=\"let tab of tabs\" class=\"tabs-title\" [class.is-active]=\"tab.active\" (click)=\"setActive(tab)\">\n                <a ng-href [class.is-active]=\"tab.active\" [attr.aria-selected]=\"tab.active\">{{tab.title}}</a>\n            </li>\n        </ul>\n        <div class=\"tabs-content\" [class.vertical]=\"vertical\">\n            <ng-content></ng-content>\n        </div>\n    "
-        }),
-        __param(0, core_1.Query(TabComponent)), 
+            template: "\n        <ul class=\"tabs\" [class.vertical]=\"vertical\">\n            <li *ngFor=\"let tab of tabs\" class=\"tabs-title\" [class.is-active]=\"tab.active\" (click)=\"setActive(tab)\">\n                <a ng-href [class.is-active]=\"tab.active\" [attr.aria-selected]=\"tab.active\">{{tab.title}}</a>\n            </li>\n        </ul>\n        <div class=\"tabs-content\" [class.vertical]=\"vertical\">\n            <ng-content></ng-content>\n        </div>\n    ",
+            providers: [core_1.QueryList]
+        }), 
         __metadata('design:paramtypes', [core_1.QueryList])
     ], TabsetComponent);
     return TabsetComponent;

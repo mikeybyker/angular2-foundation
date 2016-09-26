@@ -1,12 +1,9 @@
-import {Component, OnInit}               from '@angular/core';
-import {TabsetComponent, TabComponent}   from './foundation/tabs.component';
-import {DataService}                     from './data/data.service';
-import {Artist}                          from './data/artist';
+import { Component, OnInit }               from '@angular/core';
+import { DataService }                     from './data/data.service';
+import { Artist }                          from './data/artist';
 
 @Component({
     selector: 'foundation-tabs',
-    directives: [TabsetComponent, TabComponent],
-    providers: [DataService],
     template: `
         <div class="row">
             <div class="small-12columns">

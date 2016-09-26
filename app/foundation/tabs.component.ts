@@ -1,8 +1,14 @@
-import {Component, HostBinding, Input, AfterContentInit, Query, QueryList} from '@angular/core';
+import { Component,
+         HostBinding,
+         Input,
+         AfterContentInit,
+         Query,
+         QueryList,
+         forwardRef,
+         ContentChildren } from '@angular/core';
 
 @Component({
     selector: 'tab',
-    inputs: ['title'],
     template: `
         <div class="tabs-panel" [class.is-active]="active">
             <ng-content></ng-content>
@@ -29,14 +35,15 @@ export class TabComponent
         <div class="tabs-content" [class.vertical]="vertical">
             <ng-content></ng-content>
         </div>
-    `
+    `,
+    providers: [QueryList]
 })
 
 export class TabsetComponent implements AfterContentInit {
-    tabs: QueryList<TabComponent>;
     @Input() vertical: boolean;
+    @ContentChildren(forwardRef(() => TabComponent)) tabs: QueryList<TabComponent>;
 
-    constructor( @Query(TabComponent) tabs: QueryList<TabComponent>) {
+    constructor( tabs: QueryList<TabComponent>) {
         this.tabs = tabs;
     }
 

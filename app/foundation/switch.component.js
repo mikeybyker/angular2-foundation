@@ -9,10 +9,26 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var common_1 = require('@angular/common');
+var platform_browser_1 = require('@angular/platform-browser');
 var CheckSwitchComponent = (function () {
-    function CheckSwitchComponent() {
+    function CheckSwitchComponent(sanitizer) {
+        this.sanitizer = sanitizer;
     }
+    Object.defineProperty(CheckSwitchComponent.prototype, "htmlOn", {
+        /* Don't really do this! Unsafe. */
+        get: function () {
+            return this.sanitizer.bypassSecurityTrustHtml(this.onText);
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(CheckSwitchComponent.prototype, "htmlOff", {
+        get: function () {
+            return this.sanitizer.bypassSecurityTrustHtml(this.offText);
+        },
+        enumerable: true,
+        configurable: true
+    });
     __decorate([
         core_1.Input(), 
         __metadata('design:type', String)
@@ -45,18 +61,32 @@ var CheckSwitchComponent = (function () {
     CheckSwitchComponent = __decorate([
         core_1.Component({
             selector: 'check-switch',
-            directives: [common_1.NgIf],
-            // inputs: ['switchId', 'title', 'size', 'active', 'activeText', 'inactiveText'], // Using @Input()
-            template: "\n        <div class=\"switch\" [ngClass]=\"size\">\n            <input class=\"switch-input\" type=\"checkbox\" id=\"{{id}}\" name=\"{{id}}\" value=\"{{value}}\" [attr.checked] = \"active\">\n            <label class=\"switch-paddle\"  [attr.for] = \"id\">\n                <span class=\"show-for-sr\">{{title}}</span>\n                <span *ngIf=\"onText\" class=\"switch-active\" aria-hidden=\"true\" [innerHTML]=\"onText\"></span>\n                <span *ngIf=\"offText\" class=\"switch-inactive\" aria-hidden=\"true\" [innerHTML]=\"offText\"></span>\n            </label>\n        </div>\n    "
+            template: "\n        <div class=\"switch\" [ngClass]=\"size\">\n            <input class=\"switch-input\" type=\"checkbox\" id=\"{{id}}\" name=\"{{id}}\" value=\"{{value}}\" [attr.checked] = \"active\">\n            <label class=\"switch-paddle\"  [attr.for] = \"id\">\n                <span class=\"show-for-sr\">{{title}}</span>\n                <span *ngIf=\"onText\" class=\"switch-active\" aria-hidden=\"true\" [innerHTML]=\"htmlOn\"></span>\n                <span *ngIf=\"offText\" class=\"switch-inactive\" aria-hidden=\"true\" [innerHTML]=\"htmlOff\"></span>\n            </label>\n        </div>\n    "
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [platform_browser_1.DomSanitizer])
     ], CheckSwitchComponent);
     return CheckSwitchComponent;
 }());
 exports.CheckSwitchComponent = CheckSwitchComponent;
 var RadioSwitchComponent = (function () {
-    function RadioSwitchComponent() {
+    function RadioSwitchComponent(sanitizer) {
+        this.sanitizer = sanitizer;
     }
+    Object.defineProperty(RadioSwitchComponent.prototype, "htmlOn", {
+        /* Don't really do this! Unsafe. */
+        get: function () {
+            return this.sanitizer.bypassSecurityTrustHtml(this.onText);
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(RadioSwitchComponent.prototype, "htmlOff", {
+        get: function () {
+            return this.sanitizer.bypassSecurityTrustHtml(this.offText);
+        },
+        enumerable: true,
+        configurable: true
+    });
     __decorate([
         core_1.Input(), 
         __metadata('design:type', String)
@@ -93,11 +123,9 @@ var RadioSwitchComponent = (function () {
     RadioSwitchComponent = __decorate([
         core_1.Component({
             selector: 'radio-switch',
-            directives: [common_1.NgIf],
-            // inputs: ['switchId', 'title', 'value', 'group', 'active', 'activeText', 'inactiveText'], // Using @Input()
-            template: "\n        <div class=\"switch\" [ngClass]=\"size\">\n            <input class=\"switch-input\" type=\"radio\" id=\"{{id}}\" name=\"{{group}}\" value=\"{{value}}\" [attr.checked] = \"active\">\n            <label class=\"switch-paddle\"  [attr.for] = \"id\">\n                <span class=\"show-for-sr\">{{title}}</span>\n                <span *ngIf=\"onText\" class=\"switch-active\" aria-hidden=\"true\" [innerHTML]=\"onText\"></span>\n                <span *ngIf=\"offText\" class=\"switch-inactive\" aria-hidden=\"true\" [innerHTML]=\"offText\"></span>\n            </label>\n        </div>\n    "
+            template: "\n        <div class=\"switch\" [ngClass]=\"size\">\n            <input class=\"switch-input\" type=\"radio\" id=\"{{id}}\" name=\"{{group}}\" value=\"{{value}}\" [attr.checked] = \"active\">\n            <label class=\"switch-paddle\"  [attr.for] = \"id\">\n                <span class=\"show-for-sr\">{{title}}</span>\n                <span *ngIf=\"onText\" class=\"switch-active\" aria-hidden=\"true\" [innerHTML]=\"htmlOn\"></span>\n                <span *ngIf=\"offText\" class=\"switch-inactive\" aria-hidden=\"true\" [innerHTML]=\"htmlOff\"></span>\n            </label>\n        </div>\n    "
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [platform_browser_1.DomSanitizer])
     ], RadioSwitchComponent);
     return RadioSwitchComponent;
 }());
