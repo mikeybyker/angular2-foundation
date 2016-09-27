@@ -10,6 +10,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var mock_data_1 = require('./mock-data');
+var artist_1 = require('./artist');
+exports.Artist = artist_1.Artist;
+var question_1 = require('./question');
+exports.Question = question_1.Question;
 var DataService = (function () {
     function DataService() {
     }

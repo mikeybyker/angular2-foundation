@@ -61,7 +61,7 @@ var CheckSwitchComponent = (function () {
     CheckSwitchComponent = __decorate([
         core_1.Component({
             selector: 'check-switch',
-            template: "\n        <div class=\"switch\" [ngClass]=\"size\">\n            <input class=\"switch-input\" type=\"checkbox\" id=\"{{id}}\" name=\"{{id}}\" value=\"{{value}}\" [attr.checked] = \"active\">\n            <label class=\"switch-paddle\"  [attr.for] = \"id\">\n                <span class=\"show-for-sr\">{{title}}</span>\n                <span *ngIf=\"onText\" class=\"switch-active\" aria-hidden=\"true\" [innerHTML]=\"htmlOn\"></span>\n                <span *ngIf=\"offText\" class=\"switch-inactive\" aria-hidden=\"true\" [innerHTML]=\"htmlOff\"></span>\n            </label>\n        </div>\n    "
+            template: "\n    <div class=\"switch\" [ngClass]=\"size\">\n      <input class=\"switch-input\" type=\"checkbox\" id=\"{{id}}\" name=\"{{id}}\" value=\"{{value}}\" [attr.checked] = \"active\">\n      <label class=\"switch-paddle\"  [attr.for] = \"id\">\n        <span class=\"show-for-sr\">{{title}}</span>\n        <span *ngIf=\"onText\" class=\"switch-active\" aria-hidden=\"true\" [innerHTML]=\"htmlOn\"></span>\n        <span *ngIf=\"offText\" class=\"switch-inactive\" aria-hidden=\"true\" [innerHTML]=\"htmlOff\"></span>\n      </label>\n    </div>\n  "
         }), 
         __metadata('design:paramtypes', [platform_browser_1.DomSanitizer])
     ], CheckSwitchComponent);
@@ -123,7 +123,7 @@ var RadioSwitchComponent = (function () {
     RadioSwitchComponent = __decorate([
         core_1.Component({
             selector: 'radio-switch',
-            template: "\n        <div class=\"switch\" [ngClass]=\"size\">\n            <input class=\"switch-input\" type=\"radio\" id=\"{{id}}\" name=\"{{group}}\" value=\"{{value}}\" [attr.checked] = \"active\">\n            <label class=\"switch-paddle\"  [attr.for] = \"id\">\n                <span class=\"show-for-sr\">{{title}}</span>\n                <span *ngIf=\"onText\" class=\"switch-active\" aria-hidden=\"true\" [innerHTML]=\"htmlOn\"></span>\n                <span *ngIf=\"offText\" class=\"switch-inactive\" aria-hidden=\"true\" [innerHTML]=\"htmlOff\"></span>\n            </label>\n        </div>\n    "
+            template: "\n    <div class=\"switch\" [ngClass]=\"size\">\n      <input class=\"switch-input\" type=\"radio\" id=\"{{id}}\" name=\"{{group}}\" value=\"{{value}}\" [attr.checked] = \"active\">\n      <label class=\"switch-paddle\"  [attr.for] = \"id\">\n        <span class=\"show-for-sr\">{{title}}</span>\n        <span *ngIf=\"onText\" class=\"switch-active\" aria-hidden=\"true\" [innerHTML]=\"htmlOn\"></span>\n        <span *ngIf=\"offText\" class=\"switch-inactive\" aria-hidden=\"true\" [innerHTML]=\"htmlOff\"></span>\n      </label>\n    </div>\n    "
         }), 
         __metadata('design:paramtypes', [platform_browser_1.DomSanitizer])
     ], RadioSwitchComponent);

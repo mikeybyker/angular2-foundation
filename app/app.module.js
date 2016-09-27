@@ -12,12 +12,7 @@ var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
 var app_component_1 = require('./app.component');
 var home_component_1 = require('./home.component');
-var example_switch_1 = require('./example.switch');
-var example_tabs_1 = require('./example.tabs');
-var example_breadcrumbs_1 = require('./example.breadcrumbs');
-var example_accordion_1 = require('./example.accordion');
-var example_callout_1 = require('./example.callout');
-var foundation_module_1 = require('./foundation/foundation.module');
+var example_module_1 = require('./example/example.module');
 var app_routing_1 = require('./app.routing');
 var AppModule = (function () {
     function AppModule() {
@@ -26,17 +21,12 @@ var AppModule = (function () {
         core_1.NgModule({
             imports: [
                 platform_browser_1.BrowserModule,
-                foundation_module_1.FoundationModule,
+                example_module_1.ExampleModule,
                 app_routing_1.routing
             ],
             declarations: [
                 app_component_1.AppComponent,
-                home_component_1.HomeComponent,
-                example_switch_1.ExampleSwitch,
-                example_tabs_1.ExampleTabs,
-                example_breadcrumbs_1.ExampleBreadcrumbs,
-                example_accordion_1.ExampleAccordion,
-                example_callout_1.ExampleCallout
+                home_component_1.HomeComponent
             ],
             bootstrap: [app_component_1.AppComponent]
         }), 

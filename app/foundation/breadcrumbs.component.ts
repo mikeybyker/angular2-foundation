@@ -6,7 +6,7 @@ import { Component }  from '@angular/core';
   template: `
     <nav aria-label="You are here:" role="navigation">
       <ul class="breadcrumbs">
-        <li *ngFor="let page of pages; let last = last; let i = index;" [class.disabled]="page.disabled">
+        <li *ngFor="let page of pages; let last = last; let first = first;" [class.disabled]="page.disabled">
           <span *ngIf="!page.disabled && last">
             <span class="show-for-sr">Current: </span> {{page.title}}
           </span>
@@ -30,21 +30,21 @@ export class BreadcrumbsComponent {
     }
 }
 
-/*
+/**
 
-Some prefer 1st breadcrumb always clickable...
-Although forcing this perhaps a misuse, or a plaster for bad data...
+  Some prefer 1st breadcrumb always clickable...
+  Although forcing this perhaps a misuse, or a plaster for bad data...
 
-Can do like this: (note: as yet, there is no #first available in ngFor!)
+  Can do like this:
 
-<span *ngIf="last && i !== 0">
+  <span *ngIf="last && !first">
     <span class="show-for-sr">Current: </span> {{page.title}}
-</span>
-<span *ngIf="!page.disabled && (!last || i === 0)">
+  </span>
+  <span *ngIf="!page.disabled && (!last || first)">
     <a [href]="page.url">{{page.title}}</a>
-</span>
-<span *ngIf="page.disabled && i !== 0">
+  </span>
+  <span *ngIf="page.disabled && !first">
     {{page.title}}
-</span>
+  </span>
 
 */

@@ -12,26 +12,29 @@ import { TabComponent,
 import { DataService }           from '../data/data.service';
 
 @NgModule({
-  imports:      [ CommonModule ],
-  declarations: [ AccordionComponent,
-                  BreadcrumbsComponent,
-                  CalloutComponent,
-                  CheckSwitchComponent, 
-                  RadioSwitchComponent, 
-                  TabComponent, 
-                  TabsetComponent,
-                  PanelComponent                 
-                ],
-  exports:      [ AccordionComponent,
-                  BreadcrumbsComponent,
-                  CalloutComponent,
-                  CheckSwitchComponent, 
-                  RadioSwitchComponent, 
-                  TabComponent, 
-                  TabsetComponent,
-                  PanelComponent
-                  
-                ],
-  providers:    [ DataService ]
+  imports: [
+    CommonModule
+  ],
+  declarations: [ 
+    AccordionComponent,
+    BreadcrumbsComponent,
+    CalloutComponent,
+    CheckSwitchComponent, 
+    RadioSwitchComponent, 
+    TabComponent, 
+    TabsetComponent,
+    PanelComponent                 
+  ],
+  exports: [ 
+    AccordionComponent,
+    BreadcrumbsComponent,
+    CalloutComponent,
+    CheckSwitchComponent, 
+    RadioSwitchComponent, 
+    TabComponent, 
+    TabsetComponent,
+    PanelComponent                  
+  ],
+  providers: [ DataService ]
 })
-export class FoundationModule { }
+export class FoundationModule {}

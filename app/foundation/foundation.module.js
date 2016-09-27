@@ -21,8 +21,11 @@ var FoundationModule = (function () {
     }
     FoundationModule = __decorate([
         core_1.NgModule({
-            imports: [common_1.CommonModule],
-            declarations: [accordion_component_1.AccordionComponent,
+            imports: [
+                common_1.CommonModule
+            ],
+            declarations: [
+                accordion_component_1.AccordionComponent,
                 breadcrumbs_component_1.BreadcrumbsComponent,
                 callout_component_1.CalloutComponent,
                 switch_component_1.CheckSwitchComponent,
@@ -31,7 +34,8 @@ var FoundationModule = (function () {
                 tabs_component_1.TabsetComponent,
                 accordion_component_1.PanelComponent
             ],
-            exports: [accordion_component_1.AccordionComponent,
+            exports: [
+                accordion_component_1.AccordionComponent,
                 breadcrumbs_component_1.BreadcrumbsComponent,
                 callout_component_1.CalloutComponent,
                 switch_component_1.CheckSwitchComponent,

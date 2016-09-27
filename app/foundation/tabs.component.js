@@ -20,7 +20,7 @@ var TabComponent = (function () {
     TabComponent = __decorate([
         core_1.Component({
             selector: 'tab',
-            template: "\n        <div class=\"tabs-panel\" [class.is-active]=\"active\">\n            <ng-content></ng-content>\n        </div>\n    "
+            template: "\n    <div class=\"tabs-panel\" [class.is-active]=\"active\">\n      <ng-content></ng-content>\n    </div>\n  "
         }), 
         __metadata('design:paramtypes', [])
     ], TabComponent);
@@ -49,7 +49,7 @@ var TabsetComponent = (function () {
     TabsetComponent = __decorate([
         core_1.Component({
             selector: 'tabset',
-            template: "\n        <ul class=\"tabs\" [class.vertical]=\"vertical\">\n            <li *ngFor=\"let tab of tabs\" class=\"tabs-title\" [class.is-active]=\"tab.active\" (click)=\"setActive(tab)\">\n                <a ng-href [class.is-active]=\"tab.active\" [attr.aria-selected]=\"tab.active\">{{tab.title}}</a>\n            </li>\n        </ul>\n        <div class=\"tabs-content\" [class.vertical]=\"vertical\">\n            <ng-content></ng-content>\n        </div>\n    ",
+            template: "\n    <ul class=\"tabs\" [class.vertical]=\"vertical\">\n      <li *ngFor=\"let tab of tabs\" class=\"tabs-title\" [class.is-active]=\"tab.active\" (click)=\"setActive(tab)\">\n        <a ng-href [class.is-active]=\"tab.active\" [attr.aria-selected]=\"tab.active\">{{tab.title}}</a>\n      </li>\n    </ul>\n    <div class=\"tabs-content\" [class.vertical]=\"vertical\">\n      <ng-content></ng-content>\n    </div>\n  ",
             providers: [core_1.QueryList]
         }), 
         __metadata('design:paramtypes', [core_1.QueryList])

@@ -1,8 +1,8 @@
 # Angular2 Foundation
 
-A Selection of [Foundation](http://foundation.zurb.com/) components made with [Angular 2](https://angular.io) (rc-4). The components can be found in the app/foundation folder.
+A few [Angular 2](https://angular.io) (version 2.0.0) [Foundation](http://foundation.zurb.com/) components.
 
-Just playing around with Angular 2 - I only needed the Tabs and Accordion, and just threw a few others in...the most simple ones :-) There will be different (better) ways to go about building these components, and certainly a more consistent approach. Things can/will break with subsequent releases.
+An exercise in following alpha and beta Angular2 releases - updates made as the release cycle progressed until the full 2.0.0 release. There will be different (better) ways to go about building these components, and certainly a more consistent approach.
 
 The build/config taken directly from the official [5 minute quickstart](https://angular.io/docs/ts/latest/quickstart.html).
 
@@ -17,7 +17,7 @@ npm start
 ```
 
 ### Version
-0.3.0
+0.5.0
 
 
 Mike

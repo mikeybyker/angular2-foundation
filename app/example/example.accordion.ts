@@ -1,6 +1,6 @@
-import {Component, OnInit}                   from '@angular/core';
-import {DataService}                         from './data/data.service';
-import {Artist}                              from './data/artist';
+import { Component, OnInit }  from '@angular/core';
+import { DataService,
+         Artist }             from '../data/data.service';
 
 @Component({
   selector: 'accordion-tabs',

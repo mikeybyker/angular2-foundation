@@ -18,29 +18,29 @@ var BreadcrumbsComponent = (function () {
         core_1.Component({
             selector: 'breadcrumbs',
             inputs: ['pages'],
-            template: "\n    <nav aria-label=\"You are here:\" role=\"navigation\">\n      <ul class=\"breadcrumbs\">\n        <li *ngFor=\"let page of pages; let last = last; let i = index;\" [class.disabled]=\"page.disabled\">\n          <span *ngIf=\"!page.disabled && last\">\n            <span class=\"show-for-sr\">Current: </span> {{page.title}}\n          </span>\n          <span *ngIf=\"!page.disabled && !last\">\n            <a [href]=\"page.url\">{{page.title}}</a>\n          </span>\n          <span *ngIf=\"page.disabled\">\n            {{page.title}}\n          </span>\n        </li>\n      </ul>\n    </nav>\n  "
+            template: "\n    <nav aria-label=\"You are here:\" role=\"navigation\">\n      <ul class=\"breadcrumbs\">\n        <li *ngFor=\"let page of pages; let last = last; let first = first;\" [class.disabled]=\"page.disabled\">\n          <span *ngIf=\"!page.disabled && last\">\n            <span class=\"show-for-sr\">Current: </span> {{page.title}}\n          </span>\n          <span *ngIf=\"!page.disabled && !last\">\n            <a [href]=\"page.url\">{{page.title}}</a>\n          </span>\n          <span *ngIf=\"page.disabled\">\n            {{page.title}}\n          </span>\n        </li>\n      </ul>\n    </nav>\n  "
         }), 
         __metadata('design:paramtypes', [])
     ], BreadcrumbsComponent);
     return BreadcrumbsComponent;
 }());
 exports.BreadcrumbsComponent = BreadcrumbsComponent;
-/*
+/**
 
-Some prefer 1st breadcrumb always clickable...
-Although forcing this perhaps a misuse, or a plaster for bad data...
+  Some prefer 1st breadcrumb always clickable...
+  Although forcing this perhaps a misuse, or a plaster for bad data...
 
-Can do like this: (note: as yet, there is no #first available in ngFor!)
+  Can do like this:
 
-<span *ngIf="last && i !== 0">
+  <span *ngIf="last && !first">
     <span class="show-for-sr">Current: </span> {{page.title}}
-</span>
-<span *ngIf="!page.disabled && (!last || i === 0)">
+  </span>
+  <span *ngIf="!page.disabled && (!last || first)">
     <a [href]="page.url">{{page.title}}</a>
-</span>
-<span *ngIf="page.disabled && i !== 0">
+  </span>
+  <span *ngIf="page.disabled && !first">
     {{page.title}}
-</span>
+  </span>
 
 */ 
 //# sourceMappingURL=breadcrumbs.component.js.map

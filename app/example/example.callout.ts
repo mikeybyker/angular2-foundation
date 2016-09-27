@@ -1,6 +1,6 @@
 import { Component, OnInit }  from '@angular/core';
-import { DataService }        from './data/data.service';
-import { Artist }             from './data/artist';
+import { DataService,
+         Artist }             from '../data/data.service';
 
 @Component({
   selector: 'foundation-breadcrumbs',
@@ -69,49 +69,47 @@ import { Artist }             from './data/artist';
 
 export class ExampleCallout implements OnInit {
 
-    artists: Array<any> = [];
+  artists: Array<any> = [];
 
-    colors: Array<string> =  ["primary", "secondary", "success", "warning", "alert"];
-    sizes: Array<string> =  ["small", "large", ""];
+  colors: Array<string> =  ["primary", "secondary", "success", "warning", "alert"];
+  sizes: Array<string> =  ["small", "large", ""];
 
-    constructor(private _dataService: DataService) {
+  constructor(private _dataService: DataService) {}
 
-    }
+  ngOnInit() {
+    this.getArtists();
+  }
 
-    ngOnInit() {
-        this.getArtists();
-    }
+  // Random element from array : should be in utils/service
+  sample(arr){
+    return arr[Math.floor(Math.random() * arr.length)];
+  }
 
-    // Random element from array : should be in utils/service
-    sample(arr){
-        return arr[Math.floor(Math.random() * arr.length)];
-    }
+  // Random boolean : should be in utils/service
+  randomBoolean(){
+    return Math.random() < .5;
+  }
 
-    // Random boolean : should be in utils/service
-    randomBoolean(){
-        return Math.random() < .5;
-    }
+  // Random params
+  getModifier(){
+    let c = this.sample(this.colors),
+        s = this.sample(this.sizes),
+        closable = this.randomBoolean();
+    return {
+      modifierClass: c + ' ' + s,
+      closable: closable
+    };
+  }
 
-    // Random params
-    getModifier(){
-        let c = this.sample(this.colors),
-            s = this.sample(this.sizes),
-            closable = this.randomBoolean();
-        return {
-            modifierClass: c + ' ' + s,
-            closable: closable
-        };
-    }
-
-    getArtists() {
-        this._dataService.getArtists()
-            .then(artists => {
-                let o = {};
-                // Danger! Using Object.assign >> May blow stuff up!
-                artists.forEach((artist, index, arr) =>{
-                    o = Object.assign({}, artist, this.getModifier())
-                    this.artists[index] = o;
-                });
-            });
-    }
+  getArtists() {
+    this._dataService.getArtists()
+      .then(artists => {
+        let o = {};
+        // Danger! Using Object.assign >> May blow stuff up!
+        artists.forEach((artist, index, arr) =>{
+          o = Object.assign({}, artist, this.getModifier())
+          this.artists[index] = o;
+        });
+      });
+  }
 }

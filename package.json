@@ -1,12 +1,12 @@
 {
   "name": "angular2-foundation",
-  "version": "0.3.0",
+  "version": "0.5.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/mikeybyker/angular2-foundation.git"
   },
   "author": "mikeybyker+github@gmail.com",
-  "description": "Selection of Foundation components made with Angular 2 (rc-1)",
+  "description": "Selection of Angular 2 Foundation components made with",
   "keywords": [
     "angular2",
     "angular2js",

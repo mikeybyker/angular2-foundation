@@ -16,7 +16,7 @@ import { Component,
   `
 })
 
-// TODO : Animate
+// @todo : Animate
 
 export class AccordionComponent {
 
