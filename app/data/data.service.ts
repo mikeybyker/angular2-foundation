@@ -1,16 +1,18 @@
-import { Injectable }          from '@angular/core';
-import { ARTISTS, QUESTIONS }  from './mock-data';
-import { Artist }              from './artist';
-import { Question }            from './question';
+import { Injectable } from '@angular/core';
+import { ARTISTS, QUESTIONS } from './mock-data';
+import {
+  Artist,
+  Question
+} from './index';
+
 
 @Injectable()
-export class DataService
-{
-  getArtists(){
+export class DataService {
+  getArtists() {
     return Promise.resolve(ARTISTS);
   }
 
-  getQuestions(){
+  getQuestions() {
     return Promise.resolve(QUESTIONS);
   }
 }

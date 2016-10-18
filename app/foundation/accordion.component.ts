@@ -1,11 +1,13 @@
-import { Component,
-         Inject,
-         Input,
-         AfterContentInit,
-         QueryList,
-         Host,
-         ContentChildren,
-         forwardRef}         from '@angular/core';
+import {
+  Component,
+  Inject,
+  Input,
+  AfterContentInit,
+  QueryList,
+  Host,
+  ContentChildren,
+  forwardRef
+} from '@angular/core';
 
 @Component({
   selector: 'accordion',
@@ -26,12 +28,12 @@ export class AccordionComponent {
   @Input() multiExpand: boolean;
   @Input() allClosed: boolean;
 
-  closeAll(){
+  closeAll() {
     this.panels.length && this.panels.toArray().forEach((p) => p.active = false);
   }
 
   activate(panel: PanelComponent) {
-    if (!panel){
+    if (!panel) {
       this.closeAll();
       return;
     }

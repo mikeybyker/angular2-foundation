@@ -1,12 +1,17 @@
-import { Component, OnInit }  from '@angular/core';
-import { DataService,
-         Artist }             from '../data/data.service';
+import {
+  Component,
+  OnInit
+} from '@angular/core';
+import {
+  DataService,
+  Artist
+} from '../data/data.service';
 
 @Component({
   selector: 'foundation-breadcrumbs',
   template: `
     <div class="row">
-      <div class="small-12columns">
+      <div class="small-12 columns">
         <h4>Callouts</h4>
       </div>
     </div>
@@ -71,30 +76,30 @@ export class ExampleCallout implements OnInit {
 
   artists: Array<any> = [];
 
-  colors: Array<string> =  ["primary", "secondary", "success", "warning", "alert"];
-  sizes: Array<string> =  ["small", "large", ""];
+  colors: Array<string> = ["primary", "secondary", "success", "warning", "alert"];
+  sizes: Array<string> = ["small", "large", ""];
 
-  constructor(private _dataService: DataService) {}
+  constructor(private _dataService: DataService) { }
 
   ngOnInit() {
     this.getArtists();
   }
 
   // Random element from array : should be in utils/service
-  sample(arr){
+  sample(arr) {
     return arr[Math.floor(Math.random() * arr.length)];
   }
 
   // Random boolean : should be in utils/service
-  randomBoolean(){
+  randomBoolean() {
     return Math.random() < .5;
   }
 
   // Random params
-  getModifier(){
+  getModifier() {
     let c = this.sample(this.colors),
-        s = this.sample(this.sizes),
-        closable = this.randomBoolean();
+      s = this.sample(this.sizes),
+      closable = this.randomBoolean();
     return {
       modifierClass: c + ' ' + s,
       closable: closable
@@ -106,7 +111,7 @@ export class ExampleCallout implements OnInit {
       .then(artists => {
         let o = {};
         // Danger! Using Object.assign >> May blow stuff up!
-        artists.forEach((artist, index, arr) =>{
+        artists.forEach((artist, index, arr) => {
           o = Object.assign({}, artist, this.getModifier())
           this.artists[index] = o;
         });

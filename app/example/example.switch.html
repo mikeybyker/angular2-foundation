@@ -1,0 +1,315 @@
+<div class="row">
+	<div class="small-12 columns">
+		<h4>Switches</h4>
+	</div>
+</div>
+<div class="row">
+	<div class="medium-12 large-6 columns">
+		<p>
+			Switches are enhanced radio buttons and checkboxes, and behave just as those inputs do.<br> Each switch can connect to
+			the Angular data model ngModel. so like standard inputs, you can bind with <strong>[(ngModel)]="data"</strong>
+		</p>
+		<p>
+			For inner labels, add a div with attribute <strong>activeText</strong> for the 'on' position, and another with attribute
+			<strong>inActiveText</strong> for the 'off'.
+		</p>
+
+	</div>
+	<div class="medium-12 large-6 columns">
+		<p>Inputs:</p>
+		<ul>
+			<li><strong>switch-id</strong> : Required id</li>
+			<li><strong>name</strong> : Required name (as per radio group name) for radio switches, and required for checks if ngModel
+				is used</li>
+			<li><strong>size</strong> : "tiny", "small", "large" or default normal/standard size</li>
+			<li><strong>title</strong> : screen reader-only text</li>
+			<li><strong>value</strong> : for radio switches selected value</li>
+		</ul>
+
+	</div>
+</div>
+<div class="row">
+	<div class="small-12 columns">
+		<h4 class="subheader">Radio Switches</h4>
+		<h4 class="subheader">Data Bound with ngModel</h4>
+	</div>
+</div>
+<form #radioForm="ngForm">
+
+	<div class="row">
+		<div class="small-3 columns">
+
+			<radio-switch switch-id="test1a" size="large" title="Beer" value="Beer" name="booze" [(ngModel)]="data.booze">
+				<div activeText><span style='font-size: small;'>Beer</span></div>
+				<div inActiveText><span style='font-size: small; text-decoration: line-through;'>Beer</span></div>
+			</radio-switch>
+			<radio-switch switch-id="test1b" size="large" title="Cider" value="Cider" name="booze" [(ngModel)]="data.booze">
+				<div activeText><span style='font-size: small;'>Cider</span></div>
+				<div inActiveText><span style='font-size: small; text-decoration: line-through;'>Cider</span></div>
+			</radio-switch>
+
+		</div>
+		<div class="small-3 columns">
+
+			<radio-switch switch-id="test2a" size="large" title="Red" value="Red" name="colour" [(ngModel)]="data.colour">
+				<div activeText><span style='font-size: small;'>Red</span></div>
+				<div inActiveText><span style='font-size: small; text-decoration: line-through;'>Red</span></div>
+			</radio-switch>
+			<radio-switch switch-id="test2b" size="large" title="Blue" value="Blue" name="colour" [(ngModel)]="data.colour">
+				<div activeText><span style='font-size: small;'>Blue</span></div>
+				<div inActiveText><span style='font-size: small; text-decoration: line-through;'>Blue</span></div>
+			</radio-switch>
+
+		</div>
+		<div class="small-6 columns">
+			<div class="callout">
+				<p>Form data: {{radioForm.value | json}}</p>
+			</div>
+		</div>
+	</div>
+
+</form>
+
+<!-- RADIOS -->
+<div>
+	<div class="row">
+		<div class="small-12 columns">
+			<h4 class="subheader">Size and Options</h4>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="small-3 columns">
+			<h4 class="subheader">Normal</h4>
+
+			<radio-switch switch-id="switch3a" name="group1" value="A" title="Radio switch A" active></radio-switch>
+			<radio-switch switch-id="switch3b" name="group1" value="B" title="Radio switch B"></radio-switch>
+			<radio-switch switch-id="switch3c" name="group1" value="C" title="Radio switch C"></radio-switch>
+
+		</div>
+		<div class="small-3 columns">
+			<h4 class="subheader">Tiny</h4>
+
+			<radio-switch switch-id="switch4a" name="group2" value="A" title="Radio switch A" size="tiny" active></radio-switch>
+			<radio-switch switch-id="switch4b" name="group2" value="B" title="Radio switch B" size="tiny"></radio-switch>
+			<radio-switch switch-id="switch4c" name="group2" value="C" title="Radio switch C" size="tiny"></radio-switch>
+
+		</div>
+		<div class="small-3 columns">
+			<h4 class="subheader">Small</h4>
+
+			<radio-switch switch-id="switch5a" name="group3" value="A" title="Radio switch A" size="small" active></radio-switch>
+			<radio-switch switch-id="switch5b" name="group3" value="B" title="Radio switch B" size="small"></radio-switch>
+			<radio-switch switch-id="switch5c" name="group3" value="C" title="Radio switch C" size="small"></radio-switch>
+
+		</div>
+		<div class="small-3 columns">
+			<h4 class="subheader">Large</h4>
+
+			<radio-switch switch-id="switch6a" name="group4" value="A" title="Radio switch A" size="large" active></radio-switch>
+			<radio-switch switch-id="switch6b" name="group4" value="B" title="Radio switch B" size="large"></radio-switch>
+			<radio-switch switch-id="switch6c" name="group4" value="C" title="Radio switch C" size="large"></radio-switch>
+
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="small-12 columns">
+			<h4 class="subheader">Inner Label</h4>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="small-3 columns">
+			<h4 class="subheader">Normal</h4>
+
+			<radio-switch switch-id="switch7a" name="group5" value="A" title="Radio switch A" active>
+				<div activeText>A</div>
+				<div inActiveText><span style='text-decoration: line-through;'>A</span></div>
+			</radio-switch>
+			<radio-switch switch-id="switch7b" name="group5" value="B" title="Radio switch B">
+				<div activeText>B</div>
+				<div inActiveText><span style='text-decoration: line-through;'>B</span></div>
+			</radio-switch>
+			<radio-switch switch-id="switch7c" name="group5" value="C" title="Radio switch C">
+				<div activeText>C</div>
+				<div inActiveText><span style='text-decoration: line-through;'>C</span></div>
+			</radio-switch>
+
+		</div>
+		<div class="small-3 columns">
+			<h4 class="subheader">Tiny</h4>
+
+			<radio-switch switch-id="switch8a" name="group6" value="A" title="Radio switch A" size="tiny" active>
+				<div activeText>A</div>
+				<div inActiveText><span style='text-decoration: line-through;'>A</span></div>
+			</radio-switch>
+			<radio-switch switch-id="switch8b" name="group6" value="B" title="Radio switch B" size="tiny">
+				<div activeText>B</div>
+				<div inActiveText><span style='text-decoration: line-through;'>B</span></div>
+			</radio-switch>
+			<radio-switch switch-id="switch8c" name="group6" value="C" title="Radio switch C" size="tiny">
+				<div activeText>C</div>
+				<div inActiveText><span style='text-decoration: line-through;'>C</span></div>
+			</radio-switch>
+
+		</div>
+		<div class="small-3 columns">
+			<h4 class="subheader">Small</h4>
+
+			<radio-switch switch-id="switch9a" name="group7" value="A" title="Radio switch A" size="small" active>
+				<div activeText>A</div>
+				<div inActiveText><span style='text-decoration: line-through;'>A</span></div>
+			</radio-switch>
+			<radio-switch switch-id="switch9b" name="group7" value="B" title="Radio switch B" size="small">
+				<div activeText>B</div>
+				<div inActiveText><span style='text-decoration: line-through;'>B</span></div>
+			</radio-switch>
+			<radio-switch switch-id="switch9c" name="group7" value="C" title="Radio switch C" size="small">
+				<div activeText>C</div>
+				<div inActiveText><span style='text-decoration: line-through;'>C</span></div>
+			</radio-switch>
+
+		</div>
+		<div class="small-3 columns">
+			<h4 class="subheader">Large</h4>
+
+			<radio-switch switch-id="switch10a" name="group8" value="A" title="Radio switch A" size="large" active>
+				<div activeText>A</div>
+				<div inActiveText><span style='text-decoration: line-through;'>A</span></div>
+			</radio-switch>
+			<radio-switch switch-id="switch10b" name="group8" value="B" title="Radio switch B" size="large">
+				<div activeText>B</div>
+				<div inActiveText><span style='text-decoration: line-through;'>B</span></div>
+			</radio-switch>
+			<radio-switch switch-id="switch10c" name="group8" value="C" title="Radio switch C" size="large">
+				<div activeText>C</div>
+				<div inActiveText><span style='text-decoration: line-through;'>C</span></div>
+			</radio-switch>
+
+		</div>
+	</div>
+</div>
+<!-- END RADIOS -->
+
+<div class="row">
+	<div class="small-12 columns">
+		<h4 class="subheader">Check Switches</h4>
+		<h4 class="subheader">Data Bound with ngModel</h4>
+	</div>
+</div>
+<form #checkForm="ngForm">
+
+	<div class="row">
+		<div class="small-3 columns">
+
+			<check-switch switch-id="check1" size="large" title="Beer" name="beer" [(ngModel)]="data.checks.beer">
+				<div activeText><span style='font-size: small;'>Beer</span></div>
+				<div inActiveText><span style='font-size: small; text-decoration: line-through;'>Beer</span></div>
+			</check-switch>
+			<check-switch switch-id="check2" size="large" title="Cider" name="cider" [(ngModel)]="data.checks.cider">
+				<div activeText><span style='font-size: small;'>Cider</span></div>
+				<div inActiveText><span style='font-size: small; text-decoration: line-through;'>Cider</span></div>
+			</check-switch>
+
+		</div>
+		<div class="small-3 columns">
+
+			<check-switch switch-id="check3" size="large" title="Red" name="red" [(ngModel)]="data.checks.red">
+				<div activeText><span style='font-size: small;'>Red</span></div>
+				<div inActiveText><span style='font-size: small; text-decoration: line-through;'>Red</span></div>
+			</check-switch>
+			<check-switch switch-id="check4" size="large" title="Blue" name="blue" [(ngModel)]="data.checks.blue">
+				<div activeText><span style='font-size: small;'>Blue</span></div>
+				<div inActiveText><span style='font-size: small; text-decoration: line-through;'>Blue</span></div>
+			</check-switch>
+
+		</div>
+		<div class="small-6 columns">
+			<div class="callout">
+				<p>Form data: {{checkForm.value | json}}</p>
+			</div>
+		</div>
+	</div>
+
+</form>
+
+<!-- CHECKS -->
+<div>
+	<div class="row">
+		<div class="small-6 columns">
+			<h4 class="subheader">Size and Options</h4>
+			<check-switch switch-id="switch1a" title="Switch Me" value="check1a" active></check-switch>
+			<check-switch switch-id="switch1b" title="Switch Me" value="check1b" size="tiny"></check-switch>
+			<check-switch switch-id="switch1c" title="Switch Me" value="check1c" size="small"></check-switch>
+			<check-switch switch-id="switch1d" title="Switch Me" value="check1d" size="large"></check-switch>
+		</div>
+		<div class="small-6 columns">
+			<h4 class="subheader">Inner Labels</h4>
+			<check-switch switch-id="switch2a" value="check2a" active>
+				<div activeText>Yes</div>
+				<div inActiveText>No</div>
+			</check-switch>
+			<check-switch switch-id="switch2b" value="check2b" size="tiny">
+				<div activeText>Yes</div>
+				<div inActiveText>No</div>
+			</check-switch>
+			<check-switch switch-id="switch2c" value="check2c" size="small">
+				<div activeText>Yes</div>
+				<div inActiveText>No</div>
+			</check-switch>
+			<check-switch switch-id="switch2d" value="check2d" size="large">
+				<div activeText>Yes</div>
+				<div inActiveText>No</div>
+			</check-switch>
+		</div>
+	</div>
+
+
+</div>
+<!-- END CHECKS -->
+
+<!-- DYNAMIC -->
+<!-- Not neccessarily the values you would use, but makes it clear what is happening in the output -->
+<div class="row">
+	<div class="small-12 columns">
+
+		<h4 class="subheader">Dynamic Data</h4>
+		<form #dynamicForm="ngForm">
+			<div class="row">
+				<div *ngFor="let question of questions; let i = index" class="small-6 columns">
+
+					<div [ngSwitch]="question.qtype">
+						<h4>{{question.title}}</h4>
+						<h5 class="subheader">[Question Type: {{question.qtype}}]</h5>
+						<div *ngSwitchCase="'check'">
+							<div *ngFor="let response of question.responses">
+								<span>{{response.title}}</span>
+								<check-switch switch-id="{{question.id}}_{{response.id}}" title="{{response.title}}" value="{{response.value}}" name="{{response.title}}"
+									[(ngModel)]="data[response.value]">
+								</check-switch>
+							</div>
+						</div>
+						<div *ngSwitchCase="'radio'">
+							<div *ngFor="let response of question.responses;">
+								<span>{{response.title}}</span>
+								<radio-switch switch-id="{{question.id}}_{{response.id}}" title="{{response.title}}" name="{{question.title}}" value="{{response.title}}"
+									[(ngModel)]="data.music">
+								</radio-switch>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+<div class="row">
+	<div class="small-12 columns">
+		<div class="callout">
+			<p>Form data: {{dynamicForm.value | json}}</p>
+		</div>
+	</div>
+</div>
+<!-- END DYNAMIC -->

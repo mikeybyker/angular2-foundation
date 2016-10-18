@@ -1,5 +1,4 @@
-export class Artist
-{
+export class Artist {
   id: number;
   name: string;
   bio: string;

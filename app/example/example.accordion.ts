@@ -1,12 +1,17 @@
-import { Component, OnInit }  from '@angular/core';
-import { DataService,
-         Artist }             from '../data/data.service';
+import {
+  Component,
+  OnInit
+} from '@angular/core';
+import {
+  DataService,
+  Artist
+} from '../data/data.service';
 
 @Component({
   selector: 'accordion-tabs',
   template: `
     <div class="row">
-      <div class="small-12columns">
+      <div class="small-12 columns">
         <h4>Accordion</h4>
       </div>
     </div>
@@ -49,15 +54,15 @@ export class ExampleAccordion implements OnInit {
   }
 
   ngOnInit() {
-      this.getArtists();
+    this.getArtists();
   }
 
   getArtists() {
     this._dataService.getArtists()
       .then(artists => {
-          this.artists = artists;
+        this.artists = artists;
         artists.forEach((artist, index, arr) => {
-          this.artists[index] = Object.assign({}, artist, { active: index%2 === 0 });
+          this.artists[index] = Object.assign({}, artist, { active: index % 2 === 0 });
         });
       });
   }

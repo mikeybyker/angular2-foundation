@@ -1,5 +1,4 @@
-export class Question
-{
+export class Question {
   id: string;
   qtype: string;
   title: string;

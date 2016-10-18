@@ -1,40 +1,45 @@
-import { NgModule }              from '@angular/core';
-import { CommonModule }          from '@angular/common';
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
-import { AccordionComponent,
-         PanelComponent }        from './accordion.component';
-import { BreadcrumbsComponent }  from './breadcrumbs.component';
-import { CalloutComponent }      from './callout.component';
-import { CheckSwitchComponent,
-         RadioSwitchComponent }  from './switch.component';
-import { TabComponent,
-         TabsetComponent }       from './tabs.component';
-import { DataService }           from '../data/data.service';
+import {
+  AccordionComponent,
+  PanelComponent,
+  BreadcrumbsComponent,
+  CalloutComponent,
+  CheckSwitchComponent,
+  RadioSwitchComponent,
+  TabComponent,
+  TabsetComponent
+} from './index';
+
+import { DataService } from '../data/data.service';
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule
   ],
-  declarations: [ 
+  declarations: [
     AccordionComponent,
     BreadcrumbsComponent,
     CalloutComponent,
-    CheckSwitchComponent, 
-    RadioSwitchComponent, 
-    TabComponent, 
+    CheckSwitchComponent,
+    RadioSwitchComponent,
+    TabComponent,
     TabsetComponent,
-    PanelComponent                 
+    PanelComponent
   ],
-  exports: [ 
+  exports: [
     AccordionComponent,
     BreadcrumbsComponent,
     CalloutComponent,
-    CheckSwitchComponent, 
-    RadioSwitchComponent, 
-    TabComponent, 
+    CheckSwitchComponent,
+    RadioSwitchComponent,
+    TabComponent,
     TabsetComponent,
-    PanelComponent                  
+    PanelComponent
   ],
-  providers: [ DataService ]
+  providers: [DataService]
 })
-export class FoundationModule {}
+export class FoundationModule { }

@@ -1,12 +1,17 @@
-import { Component, OnInit }  from '@angular/core';
-import { DataService,
-         Artist }             from '../data/data.service';
+import {
+  Component,
+  OnInit
+} from '@angular/core';
+import {
+  DataService,
+  Artist
+} from '../data/data.service';
 
 @Component({
   selector: 'foundation-tabs',
   template: `
     <div class="row">
-      <div class="small-12columns">
+      <div class="small-12 columns">
         <h4>Tabs</h4>
       </div>
     </div>
@@ -48,7 +53,7 @@ import { DataService,
 export class ExampleTabs implements OnInit {
   artists: Artist[];
 
-  constructor(private _dataService: DataService) {}
+  constructor(private _dataService: DataService) { }
 
   ngOnInit() {
     this.getArtists();

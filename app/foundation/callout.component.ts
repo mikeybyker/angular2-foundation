@@ -1,4 +1,7 @@
-import { Component, Input } from '@angular/core';
+import {
+  Component,
+  Input
+} from '@angular/core';
 
 @Component({
   selector: 'callout',
@@ -28,7 +31,7 @@ export class CalloutComponent {
 
   visible: boolean = true;
 
-  dismiss(){
+  dismiss() {
     this.visible = false;
   }
 

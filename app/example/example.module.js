@@ -10,13 +10,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var common_1 = require('@angular/common');
+var forms_1 = require('@angular/forms');
 var foundation_module_1 = require('../foundation/foundation.module');
-var example_switch_1 = require('./example.switch');
-var example_tabs_1 = require('./example.tabs');
-var example_breadcrumbs_1 = require('./example.breadcrumbs');
-var example_accordion_1 = require('./example.accordion');
-var example_callout_1 = require('./example.callout');
 var example_routing_1 = require('./example.routing');
+var index_1 = require('./index');
 var ExampleModule = (function () {
     function ExampleModule() {
     }
@@ -24,15 +21,16 @@ var ExampleModule = (function () {
         core_1.NgModule({
             imports: [
                 common_1.CommonModule,
+                forms_1.FormsModule,
                 foundation_module_1.FoundationModule,
                 example_routing_1.exampleRouting
             ],
             declarations: [
-                example_switch_1.ExampleSwitch,
-                example_tabs_1.ExampleTabs,
-                example_breadcrumbs_1.ExampleBreadcrumbs,
-                example_accordion_1.ExampleAccordion,
-                example_callout_1.ExampleCallout
+                index_1.ExampleSwitch,
+                index_1.ExampleTabs,
+                index_1.ExampleBreadcrumbs,
+                index_1.ExampleAccordion,
+                index_1.ExampleCallout
             ],
             providers: []
         }), 

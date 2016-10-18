@@ -10,11 +10,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var common_1 = require('@angular/common');
-var accordion_component_1 = require('./accordion.component');
-var breadcrumbs_component_1 = require('./breadcrumbs.component');
-var callout_component_1 = require('./callout.component');
-var switch_component_1 = require('./switch.component');
-var tabs_component_1 = require('./tabs.component');
+var forms_1 = require('@angular/forms');
+var index_1 = require('./index');
 var data_service_1 = require('../data/data.service');
 var FoundationModule = (function () {
     function FoundationModule() {
@@ -22,27 +19,28 @@ var FoundationModule = (function () {
     FoundationModule = __decorate([
         core_1.NgModule({
             imports: [
-                common_1.CommonModule
+                common_1.CommonModule,
+                forms_1.FormsModule
             ],
             declarations: [
-                accordion_component_1.AccordionComponent,
-                breadcrumbs_component_1.BreadcrumbsComponent,
-                callout_component_1.CalloutComponent,
-                switch_component_1.CheckSwitchComponent,
-                switch_component_1.RadioSwitchComponent,
-                tabs_component_1.TabComponent,
-                tabs_component_1.TabsetComponent,
-                accordion_component_1.PanelComponent
+                index_1.AccordionComponent,
+                index_1.BreadcrumbsComponent,
+                index_1.CalloutComponent,
+                index_1.CheckSwitchComponent,
+                index_1.RadioSwitchComponent,
+                index_1.TabComponent,
+                index_1.TabsetComponent,
+                index_1.PanelComponent
             ],
             exports: [
-                accordion_component_1.AccordionComponent,
-                breadcrumbs_component_1.BreadcrumbsComponent,
-                callout_component_1.CalloutComponent,
-                switch_component_1.CheckSwitchComponent,
-                switch_component_1.RadioSwitchComponent,
-                tabs_component_1.TabComponent,
-                tabs_component_1.TabsetComponent,
-                accordion_component_1.PanelComponent
+                index_1.AccordionComponent,
+                index_1.BreadcrumbsComponent,
+                index_1.CalloutComponent,
+                index_1.CheckSwitchComponent,
+                index_1.RadioSwitchComponent,
+                index_1.TabComponent,
+                index_1.TabsetComponent,
+                index_1.PanelComponent
             ],
             providers: [data_service_1.DataService]
         }), 

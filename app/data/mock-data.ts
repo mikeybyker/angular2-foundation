@@ -1,5 +1,5 @@
-import { Artist }    from './artist';
-import { Question }  from './question';
+import { Artist } from './artist';
+import { Question } from './question';
 
 export var ARTISTS: Artist[] = [
   {
@@ -35,11 +35,11 @@ export var QUESTIONS: Question[] = [
     qtype: 'check',
     title: 'Which albums do you own?',
     responses: [
-        { title: 'The Top', value: 1 },
-        { title: 'Disintegration', value: 2 },
-        { title: 'The Head On The Door', value: 3 },
-        { title: 'Kiss Me Kiss Me Kiss Me', value: 4 },
-        { title: 'Faith', value: 5 }
+      { title: 'The Top', value: 1, id: 1 },
+      { title: 'Disintegration', value: 2, id: 2 },
+      { title: 'The Head On The Door', value: 3, id: 3 },
+      { title: 'Kiss Me Kiss Me Kiss Me', value: 4, id: 4 },
+      { title: 'Faith', value: 5, id: 5 }
     ]
   },
   {
@@ -47,9 +47,9 @@ export var QUESTIONS: Question[] = [
     qtype: 'radio',
     title: 'Favourite type of music?',
     responses: [
-        { title: 'Punk', value: 1 },
-        { title: 'Indie', value: 2 },
-        { title: 'Weird', value: 3 }
+      { title: 'Punk', value: 1, id: 1 },
+      { title: 'Indie', value: 2, id: 2 },
+      { title: 'Weird', value: 3, id: 3 }
     ]
   }
 ];

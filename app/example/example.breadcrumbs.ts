@@ -4,7 +4,7 @@ import { Component }  from '@angular/core';
   selector: 'foundation-breadcrumbs',
   template: `
     <div class="row">
-      <div class="small-12columns">
+      <div class="small-12 columns">
         <h4>Breadcrumbs</h4>
       </div>
     </div>
