@@ -25,6 +25,10 @@ var ExampleSwitch = (function () {
             _this.questions = questions;
         });
     };
+    ExampleSwitch.prototype.change = function (event) {
+        var _a = event.target, id = _a.id, value = _a.value, checked = _a.checked;
+        console.log({ id: id, value: value, checked: checked });
+    };
     ExampleSwitch = __decorate([
         core_1.Component({
             moduleId: module.id,

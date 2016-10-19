@@ -22,7 +22,12 @@ export const RADIO_SWITCH_VALUE_ACCESSOR: any = {
   selector: 'radio-switch',
   template: `
     <div class="switch" [ngClass]="size">
-      <input class="switch-input" type="radio" id="{{id}}" value="{{value}}" name="{{name}}" (blur)="onBlur()" [(ngModel)]="radioValue" >
+      <input class="switch-input" type="radio" id="{{id}}" 
+        value="{{value}}" 
+        name="{{name}}" 
+        (blur)="onBlur()"
+        [(ngModel)]="radioValue" 
+      >
       <label class="switch-paddle" [attr.for] = "id">
         <span class="show-for-sr">{{title}}</span>
         <span class="switch-active" aria-hidden="true"><ng-content select="[activeText]"></ng-content></span>

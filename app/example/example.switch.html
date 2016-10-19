@@ -7,7 +7,10 @@
 	<div class="medium-12 large-6 columns">
 		<p>
 			Switches are enhanced radio buttons and checkboxes, and behave just as those inputs do.<br> Each switch can connect to
-			the Angular data model ngModel. so like standard inputs, you can bind with <strong>[(ngModel)]="data"</strong>
+			the Angular data model ngModel so, as with standard inputs, you can bind with <strong>[(ngModel)]="data"</strong>
+		</p>
+		<p>
+			A change handler can also be used:<br><strong>(change)="someHandler($event)"</strong>
 		</p>
 		<p>
 			For inner labels, add a div with attribute <strong>activeText</strong> for the 'on' position, and another with attribute
@@ -39,11 +42,11 @@
 	<div class="row">
 		<div class="small-3 columns">
 
-			<radio-switch switch-id="test1a" size="large" title="Beer" value="Beer" name="booze" [(ngModel)]="data.booze">
+			<radio-switch switch-id="radio1a" size="large" title="Beer" value="Beer" name="booze" [(ngModel)]="data.booze">
 				<div activeText><span style='font-size: small;'>Beer</span></div>
 				<div inActiveText><span style='font-size: small; text-decoration: line-through;'>Beer</span></div>
 			</radio-switch>
-			<radio-switch switch-id="test1b" size="large" title="Cider" value="Cider" name="booze" [(ngModel)]="data.booze">
+			<radio-switch switch-id="radio1b" size="large" title="Cider" value="Cider" name="booze" [(ngModel)]="data.booze">
 				<div activeText><span style='font-size: small;'>Cider</span></div>
 				<div inActiveText><span style='font-size: small; text-decoration: line-through;'>Cider</span></div>
 			</radio-switch>
@@ -51,11 +54,11 @@
 		</div>
 		<div class="small-3 columns">
 
-			<radio-switch switch-id="test2a" size="large" title="Red" value="Red" name="colour" [(ngModel)]="data.colour">
+			<radio-switch switch-id="radio2a" size="large" title="Red" value="Red" name="colour" [(ngModel)]="data.colour">
 				<div activeText><span style='font-size: small;'>Red</span></div>
 				<div inActiveText><span style='font-size: small; text-decoration: line-through;'>Red</span></div>
 			</radio-switch>
-			<radio-switch switch-id="test2b" size="large" title="Blue" value="Blue" name="colour" [(ngModel)]="data.colour">
+			<radio-switch switch-id="radio2b" size="large" title="Blue" value="Blue" name="colour" [(ngModel)]="data.colour">
 				<div activeText><span style='font-size: small;'>Blue</span></div>
 				<div inActiveText><span style='font-size: small; text-decoration: line-through;'>Blue</span></div>
 			</radio-switch>
@@ -82,33 +85,33 @@
 		<div class="small-3 columns">
 			<h4 class="subheader">Normal</h4>
 
-			<radio-switch switch-id="switch3a" name="group1" value="A" title="Radio switch A" active></radio-switch>
-			<radio-switch switch-id="switch3b" name="group1" value="B" title="Radio switch B"></radio-switch>
-			<radio-switch switch-id="switch3c" name="group1" value="C" title="Radio switch C"></radio-switch>
+			<radio-switch (change)="change($event)" switch-id="radio3a" name="group1" value="A" title="Radio switch A"></radio-switch>
+			<radio-switch (change)="change($event)" switch-id="radio3b" name="group1" value="B" title="Radio switch B" active></radio-switch>
+			<radio-switch (change)="change($event)" switch-id="radio3c" name="group1" value="C" title="Radio switch C"></radio-switch>
 
 		</div>
 		<div class="small-3 columns">
 			<h4 class="subheader">Tiny</h4>
 
-			<radio-switch switch-id="switch4a" name="group2" value="A" title="Radio switch A" size="tiny" active></radio-switch>
-			<radio-switch switch-id="switch4b" name="group2" value="B" title="Radio switch B" size="tiny"></radio-switch>
-			<radio-switch switch-id="switch4c" name="group2" value="C" title="Radio switch C" size="tiny"></radio-switch>
+			<radio-switch switch-id="radio4a" name="group2" value="A" title="Radio switch A" size="tiny" active></radio-switch>
+			<radio-switch switch-id="radio4b" name="group2" value="B" title="Radio switch B" size="tiny"></radio-switch>
+			<radio-switch switch-id="radio4c" name="group2" value="C" title="Radio switch C" size="tiny"></radio-switch>
 
 		</div>
 		<div class="small-3 columns">
 			<h4 class="subheader">Small</h4>
 
-			<radio-switch switch-id="switch5a" name="group3" value="A" title="Radio switch A" size="small" active></radio-switch>
-			<radio-switch switch-id="switch5b" name="group3" value="B" title="Radio switch B" size="small"></radio-switch>
-			<radio-switch switch-id="switch5c" name="group3" value="C" title="Radio switch C" size="small"></radio-switch>
+			<radio-switch switch-id="radio5a" name="group3" value="A" title="Radio switch A" size="small" active></radio-switch>
+			<radio-switch switch-id="radio5b" name="group3" value="B" title="Radio switch B" size="small"></radio-switch>
+			<radio-switch switch-id="radio5c" name="group3" value="C" title="Radio switch C" size="small"></radio-switch>
 
 		</div>
 		<div class="small-3 columns">
 			<h4 class="subheader">Large</h4>
 
-			<radio-switch switch-id="switch6a" name="group4" value="A" title="Radio switch A" size="large" active></radio-switch>
-			<radio-switch switch-id="switch6b" name="group4" value="B" title="Radio switch B" size="large"></radio-switch>
-			<radio-switch switch-id="switch6c" name="group4" value="C" title="Radio switch C" size="large"></radio-switch>
+			<radio-switch switch-id="radio6a" name="group4" value="A" title="Radio switch A" size="large" active></radio-switch>
+			<radio-switch switch-id="radio6b" name="group4" value="B" title="Radio switch B" size="large"></radio-switch>
+			<radio-switch switch-id="radio6c" name="group4" value="C" title="Radio switch C" size="large"></radio-switch>
 
 		</div>
 	</div>
@@ -123,15 +126,15 @@
 		<div class="small-3 columns">
 			<h4 class="subheader">Normal</h4>
 
-			<radio-switch switch-id="switch7a" name="group5" value="A" title="Radio switch A" active>
+			<radio-switch switch-id="radio7a" name="group5" value="A" title="Radio switch A" active>
 				<div activeText>A</div>
 				<div inActiveText><span style='text-decoration: line-through;'>A</span></div>
 			</radio-switch>
-			<radio-switch switch-id="switch7b" name="group5" value="B" title="Radio switch B">
+			<radio-switch switch-id="radio7b" name="group5" value="B" title="Radio switch B">
 				<div activeText>B</div>
 				<div inActiveText><span style='text-decoration: line-through;'>B</span></div>
 			</radio-switch>
-			<radio-switch switch-id="switch7c" name="group5" value="C" title="Radio switch C">
+			<radio-switch switch-id="radio7c" name="group5" value="C" title="Radio switch C">
 				<div activeText>C</div>
 				<div inActiveText><span style='text-decoration: line-through;'>C</span></div>
 			</radio-switch>
@@ -140,15 +143,15 @@
 		<div class="small-3 columns">
 			<h4 class="subheader">Tiny</h4>
 
-			<radio-switch switch-id="switch8a" name="group6" value="A" title="Radio switch A" size="tiny" active>
+			<radio-switch switch-id="radio8a" name="group6" value="A" title="Radio switch A" size="tiny" active>
 				<div activeText>A</div>
 				<div inActiveText><span style='text-decoration: line-through;'>A</span></div>
 			</radio-switch>
-			<radio-switch switch-id="switch8b" name="group6" value="B" title="Radio switch B" size="tiny">
+			<radio-switch switch-id="radio8b" name="group6" value="B" title="Radio switch B" size="tiny">
 				<div activeText>B</div>
 				<div inActiveText><span style='text-decoration: line-through;'>B</span></div>
 			</radio-switch>
-			<radio-switch switch-id="switch8c" name="group6" value="C" title="Radio switch C" size="tiny">
+			<radio-switch switch-id="radio8c" name="group6" value="C" title="Radio switch C" size="tiny">
 				<div activeText>C</div>
 				<div inActiveText><span style='text-decoration: line-through;'>C</span></div>
 			</radio-switch>
@@ -157,15 +160,15 @@
 		<div class="small-3 columns">
 			<h4 class="subheader">Small</h4>
 
-			<radio-switch switch-id="switch9a" name="group7" value="A" title="Radio switch A" size="small" active>
+			<radio-switch switch-id="radio9a" name="group7" value="A" title="Radio switch A" size="small" active>
 				<div activeText>A</div>
 				<div inActiveText><span style='text-decoration: line-through;'>A</span></div>
 			</radio-switch>
-			<radio-switch switch-id="switch9b" name="group7" value="B" title="Radio switch B" size="small">
+			<radio-switch switch-id="radio9b" name="group7" value="B" title="Radio switch B" size="small">
 				<div activeText>B</div>
 				<div inActiveText><span style='text-decoration: line-through;'>B</span></div>
 			</radio-switch>
-			<radio-switch switch-id="switch9c" name="group7" value="C" title="Radio switch C" size="small">
+			<radio-switch switch-id="radio9c" name="group7" value="C" title="Radio switch C" size="small">
 				<div activeText>C</div>
 				<div inActiveText><span style='text-decoration: line-through;'>C</span></div>
 			</radio-switch>
@@ -174,15 +177,15 @@
 		<div class="small-3 columns">
 			<h4 class="subheader">Large</h4>
 
-			<radio-switch switch-id="switch10a" name="group8" value="A" title="Radio switch A" size="large" active>
+			<radio-switch switch-id="radio10a" name="group8" value="A" title="Radio switch A" size="large" active>
 				<div activeText>A</div>
 				<div inActiveText><span style='text-decoration: line-through;'>A</span></div>
 			</radio-switch>
-			<radio-switch switch-id="switch10b" name="group8" value="B" title="Radio switch B" size="large">
+			<radio-switch switch-id="radio10b" name="group8" value="B" title="Radio switch B" size="large">
 				<div activeText>B</div>
 				<div inActiveText><span style='text-decoration: line-through;'>B</span></div>
 			</radio-switch>
-			<radio-switch switch-id="switch10c" name="group8" value="C" title="Radio switch C" size="large">
+			<radio-switch switch-id="radio10c" name="group8" value="C" title="Radio switch C" size="large">
 				<div activeText>C</div>
 				<div inActiveText><span style='text-decoration: line-through;'>C</span></div>
 			</radio-switch>
@@ -203,11 +206,11 @@
 	<div class="row">
 		<div class="small-3 columns">
 
-			<check-switch switch-id="check1" size="large" title="Beer" name="beer" [(ngModel)]="data.checks.beer">
+			<check-switch switch-id="check1" size="large" title="Beer!!" value="beer" name="beer" [(ngModel)]="data.checks.beer">
 				<div activeText><span style='font-size: small;'>Beer</span></div>
 				<div inActiveText><span style='font-size: small; text-decoration: line-through;'>Beer</span></div>
 			</check-switch>
-			<check-switch switch-id="check2" size="large" title="Cider" name="cider" [(ngModel)]="data.checks.cider">
+			<check-switch switch-id="check2" size="large" title="Cider!!" value="cider" name="cider" [(ngModel)]="data.checks.cider">
 				<div activeText><span style='font-size: small;'>Cider</span></div>
 				<div inActiveText><span style='font-size: small; text-decoration: line-through;'>Cider</span></div>
 			</check-switch>
@@ -239,26 +242,26 @@
 	<div class="row">
 		<div class="small-6 columns">
 			<h4 class="subheader">Size and Options</h4>
-			<check-switch switch-id="switch1a" title="Switch Me" value="check1a" active></check-switch>
-			<check-switch switch-id="switch1b" title="Switch Me" value="check1b" size="tiny"></check-switch>
-			<check-switch switch-id="switch1c" title="Switch Me" value="check1c" size="small"></check-switch>
-			<check-switch switch-id="switch1d" title="Switch Me" value="check1d" size="large"></check-switch>
+			<check-switch (change)="change($event)" switch-id="check1a" title="Switch Me" value="a" active></check-switch>
+			<check-switch (change)="change($event)" switch-id="check1b" title="Switch Me" value="b" size="tiny"></check-switch>
+			<check-switch (change)="change($event)" switch-id="check1c" title="Switch Me" value="c" size="small"></check-switch>
+			<check-switch (change)="change($event)" switch-id="check1d" title="Switch Me" value="d" size="large"></check-switch>
 		</div>
 		<div class="small-6 columns">
 			<h4 class="subheader">Inner Labels</h4>
-			<check-switch switch-id="switch2a" value="check2a" active>
+			<check-switch switch-id="check2a" value="a" active>
 				<div activeText>Yes</div>
 				<div inActiveText>No</div>
 			</check-switch>
-			<check-switch switch-id="switch2b" value="check2b" size="tiny">
+			<check-switch switch-id="check2b" value="b" size="tiny">
 				<div activeText>Yes</div>
 				<div inActiveText>No</div>
 			</check-switch>
-			<check-switch switch-id="switch2c" value="check2c" size="small">
+			<check-switch switch-id="check2c" value="c" size="small">
 				<div activeText>Yes</div>
 				<div inActiveText>No</div>
 			</check-switch>
-			<check-switch switch-id="switch2d" value="check2d" size="large">
+			<check-switch switch-id="check2d" value="d" size="large">
 				<div activeText>Yes</div>
 				<div inActiveText>No</div>
 			</check-switch>

@@ -30,4 +30,9 @@ export class ExampleSwitch implements OnInit {
         this.questions = questions;
       });
   }
+
+  change(event) {
+    const {id, value, checked} = event.target;
+    console.log({ id, value, checked });
+  }
 }

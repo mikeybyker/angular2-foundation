@@ -85,7 +85,7 @@ var RadioSwitchComponent = (function () {
     RadioSwitchComponent = __decorate([
         core_1.Component({
             selector: 'radio-switch',
-            template: "\n    <div class=\"switch\" [ngClass]=\"size\">\n      <input class=\"switch-input\" type=\"radio\" id=\"{{id}}\" value=\"{{value}}\" name=\"{{name}}\" (blur)=\"onBlur()\" [(ngModel)]=\"radioValue\" >\n      <label class=\"switch-paddle\" [attr.for] = \"id\">\n        <span class=\"show-for-sr\">{{title}}</span>\n        <span class=\"switch-active\" aria-hidden=\"true\"><ng-content select=\"[activeText]\"></ng-content></span>\n        <span class=\"switch-inactive\" aria-hidden=\"true\"><ng-content select=\"[inActiveText]\"></ng-content></span>\n      </label>\n    </div>\n    ",
+            template: "\n    <div class=\"switch\" [ngClass]=\"size\">\n      <input class=\"switch-input\" type=\"radio\" id=\"{{id}}\" \n        value=\"{{value}}\" \n        name=\"{{name}}\" \n        (blur)=\"onBlur()\"\n        [(ngModel)]=\"radioValue\" \n      >\n      <label class=\"switch-paddle\" [attr.for] = \"id\">\n        <span class=\"show-for-sr\">{{title}}</span>\n        <span class=\"switch-active\" aria-hidden=\"true\"><ng-content select=\"[activeText]\"></ng-content></span>\n        <span class=\"switch-inactive\" aria-hidden=\"true\"><ng-content select=\"[inActiveText]\"></ng-content></span>\n      </label>\n    </div>\n    ",
             providers: [exports.RADIO_SWITCH_VALUE_ACCESSOR]
         }), 
         __metadata('design:paramtypes', [])
