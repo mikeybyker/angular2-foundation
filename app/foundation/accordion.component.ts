@@ -72,7 +72,7 @@ export class PanelComponent implements AfterContentInit {
     // I picked, for no good reason, allClosed wins...
     this.active = this.accordion.allClosed ? false : this.active;
   }
-  clicked(event) {
+  clicked(event: any) {
     event.preventDefault();
     this.accordion.activate(this);
   }

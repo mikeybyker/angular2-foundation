@@ -31,7 +31,7 @@ export class ExampleSwitch implements OnInit {
       });
   }
 
-  change(event) {
+  change(event: any) {
     const {id, value, checked} = event.target;
     console.log({ id, value, checked });
   }

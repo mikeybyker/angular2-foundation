@@ -86,7 +86,7 @@ export class ExampleCallout implements OnInit {
   }
 
   // Random element from array : should be in utils/service
-  sample(arr) {
+  sample(arr: Array<any>) {
     return arr[Math.floor(Math.random() * arr.length)];
   }
 
