@@ -16,7 +16,7 @@ var AccordionComponent = (function () {
     function AccordionComponent() {
     }
     AccordionComponent.prototype.closeAll = function () {
-        this.panels.length && this.panels.toArray().forEach(function (p) { return p.active = false; });
+        this.panels.forEach(function (panel) { return panel.active = false; });
     };
     AccordionComponent.prototype.activate = function (panel) {
         if (!panel) {
@@ -70,7 +70,7 @@ var PanelComponent = (function () {
         this.accordion.activate(this);
     };
     __decorate([
-        core_1.Input('title'), 
+        core_1.Input(), 
         __metadata('design:type', String)
     ], PanelComponent.prototype, "title", void 0);
     __decorate([

@@ -29,7 +29,7 @@ export class AccordionComponent {
   @Input() allClosed: boolean;
 
   closeAll() {
-    this.panels.length && this.panels.toArray().forEach((p) => p.active = false);
+    this.panels.forEach(panel => panel.active = false);
   }
 
   activate(panel: PanelComponent) {
@@ -62,7 +62,7 @@ export class AccordionComponent {
 })
 
 export class PanelComponent implements AfterContentInit {
-  @Input('title') title: string;
+  @Input() title: string;
   @Input('initial') active: boolean = false;
 
   constructor( @Host() @Inject(forwardRef(() => AccordionComponent)) private accordion: AccordionComponent) {

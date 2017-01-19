@@ -14,7 +14,7 @@ var TabComponent = (function () {
         this.active = false;
     }
     __decorate([
-        core_1.Input('title'), 
+        core_1.Input(), 
         __metadata('design:type', String)
     ], TabComponent.prototype, "title", void 0);
     TabComponent = __decorate([
@@ -32,10 +32,12 @@ var TabsetComponent = (function () {
         this.tabs = tabs;
     }
     TabsetComponent.prototype.ngAfterContentInit = function () {
-        this.tabs.toArray()[0].active = true;
+        this.tabs.first.active = true;
     };
     TabsetComponent.prototype.setActive = function (tab) {
-        this.tabs.toArray().forEach(function (t) { return t.active = false; });
+        this.tabs.forEach(function (tab) {
+            tab.active = false;
+        });
         tab.active = true;
     };
     __decorate([

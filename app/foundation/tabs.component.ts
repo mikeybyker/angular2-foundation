@@ -1,9 +1,11 @@
-import { Component,
-         Input,
-         AfterContentInit,
-         QueryList,
-         forwardRef,
-         ContentChildren } from '@angular/core';
+import {
+  Component,
+  Input,
+  AfterContentInit,
+  QueryList,
+  forwardRef,
+  ContentChildren
+} from '@angular/core';
 
 @Component({
   selector: 'tab',
@@ -14,9 +16,8 @@ import { Component,
   `
 })
 
-export class TabComponent
-{
-  @Input('title') title: string;
+export class TabComponent {
+  @Input() title: string;
   active: boolean = false;
   name: string;
 }
@@ -40,16 +41,18 @@ export class TabsetComponent implements AfterContentInit {
   @Input() vertical: boolean;
   @ContentChildren(forwardRef(() => TabComponent)) tabs: QueryList<TabComponent>;
 
-  constructor( tabs: QueryList<TabComponent>) {
+  constructor(tabs: QueryList<TabComponent>) {
     this.tabs = tabs;
   }
 
   ngAfterContentInit() {
-    this.tabs.toArray()[0].active = true;
+    this.tabs.first.active = true;
   }
 
   setActive(tab: TabComponent) {
-    this.tabs.toArray().forEach((t) => t.active = false);
+    this.tabs.forEach(tab => {
+      tab.active = false
+    });
     tab.active = true;
   }
 }
