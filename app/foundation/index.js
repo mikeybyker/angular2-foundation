@@ -13,4 +13,7 @@ exports.PanelComponent = accordion_component_1.PanelComponent;
 var tabs_component_1 = require('./tabs.component');
 exports.TabComponent = tabs_component_1.TabComponent;
 exports.TabsetComponent = tabs_component_1.TabsetComponent;
+var tabs_alt_component_1 = require('./tabs.alt.component');
+exports.TabAltComponent = tabs_alt_component_1.TabAltComponent;
+exports.TabsetAltComponent = tabs_alt_component_1.TabsetAltComponent;
 //# sourceMappingURL=index.js.map

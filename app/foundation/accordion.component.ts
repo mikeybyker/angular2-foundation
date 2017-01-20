@@ -25,8 +25,11 @@ export class AccordionComponent {
   @ContentChildren(forwardRef(() => PanelComponent))
   panels: QueryList<PanelComponent>;
 
-  @Input() multiExpand: boolean;
-  @Input() allClosed: boolean;
+  @Input()
+  multiExpand: boolean;
+
+  @Input()
+  allClosed: boolean;
 
   closeAll() {
     this.panels.forEach(panel => panel.active = false);
@@ -62,8 +65,12 @@ export class AccordionComponent {
 })
 
 export class PanelComponent implements AfterContentInit {
-  @Input() title: string;
-  @Input('initial') active: boolean = false;
+
+  @Input()
+  title: string;
+
+  @Input('initial')
+  active: boolean = false;
 
   constructor( @Host() @Inject(forwardRef(() => AccordionComponent)) private accordion: AccordionComponent) {
   }

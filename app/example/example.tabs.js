@@ -21,7 +21,7 @@ var ExampleTabs = (function () {
         var _this = this;
         this._dataService.getArtists()
             .then(function (artists) {
-            _this.artists = artists.splice(2); // artists from 3rd item on (hard coded first 2)
+            _this.artists = artists.slice(2); // artists from 3rd item on (hard coded first 2)
         });
     };
     ExampleTabs = __decorate([

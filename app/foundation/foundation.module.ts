@@ -10,7 +10,9 @@ import {
   CheckSwitchComponent,
   RadioSwitchComponent,
   TabComponent,
-  TabsetComponent
+  TabsetComponent,
+  TabAltComponent,
+  TabsetAltComponent
 } from './index';
 
 import { DataService } from '../data/data.service';
@@ -28,7 +30,9 @@ import { DataService } from '../data/data.service';
     RadioSwitchComponent,
     TabComponent,
     TabsetComponent,
-    PanelComponent
+    PanelComponent,
+    TabAltComponent,
+    TabsetAltComponent
   ],
   exports: [
     AccordionComponent,
@@ -38,7 +42,9 @@ import { DataService } from '../data/data.service';
     RadioSwitchComponent,
     TabComponent,
     TabsetComponent,
-    PanelComponent
+    PanelComponent,
+    TabAltComponent,
+    TabsetAltComponent
   ],
   providers: [DataService]
 })

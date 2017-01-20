@@ -26,6 +26,10 @@ var exampleRoutes = [
     {
         path: 'tabs',
         component: index_1.ExampleTabs
+    },
+    {
+        path: 'tabs-alt',
+        component: index_1.ExampleTabsAlt
     }
 ];
 exports.exampleRouting = router_1.RouterModule.forChild(exampleRoutes);

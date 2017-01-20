@@ -35,12 +35,23 @@ export const CHECK_SWITCH_VALUE_ACCESSOR: any = {
 
 
 export class CheckSwitchComponent implements ControlValueAccessor, OnInit {
-  @Input() title: string;
-  @Input('switch-id') id: string;
-  @Input() name: string;
-  @Input() value: string;
-  @Input() size: string;    // .tiny, .small, or .large
-  @Input() active: boolean;
+  @Input()
+  title: string;
+
+  @Input('switch-id')
+  id: string;
+
+  @Input()
+  name: string;
+
+  @Input()
+  value: string;
+
+  @Input()
+  size: string;    // .tiny, .small, or .large
+
+  @Input()
+  active: boolean;
 
   // Control Value Accessor will provide values for these...
   private onTouchedCallback: () => void = noop;

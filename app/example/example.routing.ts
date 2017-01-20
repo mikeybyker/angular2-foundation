@@ -4,6 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import {
   ExampleSwitch,
   ExampleTabs,
+  ExampleTabsAlt,
   ExampleBreadcrumbs,
   ExampleAccordion,
   ExampleCallout
@@ -33,6 +34,10 @@ const exampleRoutes: Routes = [
   {
     path: 'tabs',
     component: ExampleTabs
+  },
+  {
+    path: 'tabs-alt',
+    component: ExampleTabsAlt
   }
 ];
 

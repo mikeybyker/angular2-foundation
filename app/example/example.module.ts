@@ -7,6 +7,7 @@ import { exampleRouting } from './example.routing'
 import {
   ExampleSwitch,
   ExampleTabs,
+  ExampleTabsAlt,
   ExampleBreadcrumbs,
   ExampleAccordion,
   ExampleCallout
@@ -22,6 +23,7 @@ import {
   declarations: [
     ExampleSwitch,
     ExampleTabs,
+    ExampleTabsAlt,
     ExampleBreadcrumbs,
     ExampleAccordion,
     ExampleCallout

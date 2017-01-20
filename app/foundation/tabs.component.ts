@@ -3,7 +3,6 @@ import {
   Input,
   AfterContentInit,
   QueryList,
-  forwardRef,
   ContentChildren
 } from '@angular/core';
 
@@ -17,7 +16,8 @@ import {
 })
 
 export class TabComponent {
-  @Input() title: string;
+  @Input()
+  title: string;
   active: boolean = false;
   name: string;
 }
@@ -26,31 +26,33 @@ export class TabComponent {
   selector: 'tabset',
   template: `
     <ul class="tabs" [class.vertical]="vertical">
-      <li *ngFor="let tab of tabs" class="tabs-title" [class.is-active]="tab.active" (click)="setActive(tab)">
+      <li *ngFor="let tab of tabset" class="tabs-title" [class.is-active]="tab.active" (click)="setActive(tab)">
         <a ng-href [class.is-active]="tab.active" [attr.aria-selected]="tab.active">{{tab.title}}</a>
       </li>
     </ul>
     <div class="tabs-content" [class.vertical]="vertical">
       <ng-content></ng-content>
     </div>
-  `,
-  providers: [QueryList]
+  `
 })
 
 export class TabsetComponent implements AfterContentInit {
-  @Input() vertical: boolean;
-  @ContentChildren(forwardRef(() => TabComponent)) tabs: QueryList<TabComponent>;
 
-  constructor(tabs: QueryList<TabComponent>) {
-    this.tabs = tabs;
+  @Input()
+  vertical: boolean;
+
+  @ContentChildren(TabComponent)
+  tabset: QueryList<TabComponent>;
+
+  constructor() {
   }
 
   ngAfterContentInit() {
-    this.tabs.first.active = true;
+    this.tabset.first.active = true;
   }
 
   setActive(tab: TabComponent) {
-    this.tabs.forEach(tab => {
+    this.tabset.forEach(tab => {
       tab.active = false
     });
     tab.active = true;

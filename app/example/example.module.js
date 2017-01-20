@@ -28,6 +28,7 @@ var ExampleModule = (function () {
             declarations: [
                 index_1.ExampleSwitch,
                 index_1.ExampleTabs,
+                index_1.ExampleTabsAlt,
                 index_1.ExampleBreadcrumbs,
                 index_1.ExampleAccordion,
                 index_1.ExampleCallout

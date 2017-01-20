@@ -62,7 +62,7 @@ export class ExampleTabs implements OnInit {
   getArtists() {
     this._dataService.getArtists()
       .then(artists => {
-        this.artists = artists.splice(2); // artists from 3rd item on (hard coded first 2)
+        this.artists = artists.slice(2); // artists from 3rd item on (hard coded first 2)
       });
   }
 }

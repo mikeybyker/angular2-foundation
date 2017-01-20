@@ -10,3 +10,7 @@ export {
   TabComponent,
   TabsetComponent
 } from './tabs.component';
+export {
+  TabAltComponent,
+  TabsetAltComponent
+} from './tabs.alt.component';

@@ -30,7 +30,9 @@ var FoundationModule = (function () {
                 index_1.RadioSwitchComponent,
                 index_1.TabComponent,
                 index_1.TabsetComponent,
-                index_1.PanelComponent
+                index_1.PanelComponent,
+                index_1.TabAltComponent,
+                index_1.TabsetAltComponent
             ],
             exports: [
                 index_1.AccordionComponent,
@@ -40,7 +42,9 @@ var FoundationModule = (function () {
                 index_1.RadioSwitchComponent,
                 index_1.TabComponent,
                 index_1.TabsetComponent,
-                index_1.PanelComponent
+                index_1.PanelComponent,
+                index_1.TabAltComponent,
+                index_1.TabsetAltComponent
             ],
             providers: [data_service_1.DataService]
         }), 

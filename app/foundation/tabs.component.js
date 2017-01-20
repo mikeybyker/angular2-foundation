@@ -28,14 +28,13 @@ var TabComponent = (function () {
 }());
 exports.TabComponent = TabComponent;
 var TabsetComponent = (function () {
-    function TabsetComponent(tabs) {
-        this.tabs = tabs;
+    function TabsetComponent() {
     }
     TabsetComponent.prototype.ngAfterContentInit = function () {
-        this.tabs.first.active = true;
+        this.tabset.first.active = true;
     };
     TabsetComponent.prototype.setActive = function (tab) {
-        this.tabs.forEach(function (tab) {
+        this.tabset.forEach(function (tab) {
             tab.active = false;
         });
         tab.active = true;
@@ -45,16 +44,15 @@ var TabsetComponent = (function () {
         __metadata('design:type', Boolean)
     ], TabsetComponent.prototype, "vertical", void 0);
     __decorate([
-        core_1.ContentChildren(core_1.forwardRef(function () { return TabComponent; })), 
+        core_1.ContentChildren(TabComponent), 
         __metadata('design:type', core_1.QueryList)
-    ], TabsetComponent.prototype, "tabs", void 0);
+    ], TabsetComponent.prototype, "tabset", void 0);
     TabsetComponent = __decorate([
         core_1.Component({
             selector: 'tabset',
-            template: "\n    <ul class=\"tabs\" [class.vertical]=\"vertical\">\n      <li *ngFor=\"let tab of tabs\" class=\"tabs-title\" [class.is-active]=\"tab.active\" (click)=\"setActive(tab)\">\n        <a ng-href [class.is-active]=\"tab.active\" [attr.aria-selected]=\"tab.active\">{{tab.title}}</a>\n      </li>\n    </ul>\n    <div class=\"tabs-content\" [class.vertical]=\"vertical\">\n      <ng-content></ng-content>\n    </div>\n  ",
-            providers: [core_1.QueryList]
+            template: "\n    <ul class=\"tabs\" [class.vertical]=\"vertical\">\n      <li *ngFor=\"let tab of tabset\" class=\"tabs-title\" [class.is-active]=\"tab.active\" (click)=\"setActive(tab)\">\n        <a ng-href [class.is-active]=\"tab.active\" [attr.aria-selected]=\"tab.active\">{{tab.title}}</a>\n      </li>\n    </ul>\n    <div class=\"tabs-content\" [class.vertical]=\"vertical\">\n      <ng-content></ng-content>\n    </div>\n  "
         }), 
-        __metadata('design:paramtypes', [core_1.QueryList])
+        __metadata('design:paramtypes', [])
     ], TabsetComponent);
     return TabsetComponent;
 }());

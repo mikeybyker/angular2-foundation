@@ -27,7 +27,8 @@ import {
 
 export class CalloutComponent {
 
-  @Input() closable: boolean;
+  @Input()
+  closable: boolean;
 
   visible: boolean = true;
 
